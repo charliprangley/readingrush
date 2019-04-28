@@ -159,3 +159,56 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Custom post types
+ */
+require get_template_directory() . '/inc/post-type--reading-challenge.php';
+require get_template_directory() . '/inc/post-type--badge-submissions.php';
+
+
+function my_pre_save_post( $post_id ) {
+
+    // check if this is to be a new post
+    if( $post_id != 'new' )
+    {
+        return $post_id;
+    }
+
+    $current_user = wp_get_current_user();
+    $author = $current_user->user_login; // OR [user_firstname, user_lastname, display_name]
+    // Create a new post
+    $post = array(
+        'post_status'  => 'publish',
+        'post_title'  => $author,
+        'post_type'  => 'reading-challenge',
+    );
+
+    // insert the post
+    $post_id = wp_insert_post( $post );
+
+    // update $_POST['return']
+    $_POST['return'] = add_query_arg( array('post_id' => $post_id), $_POST['return'] );
+
+    // return the new ID
+    return $post_id;
+}
+
+add_filter('acf/pre_save_post' , 'my_pre_save_post' );
+
+function get_total_page_count( $key = '', $type = 'post', $status = 'publish' ) {
+
+    global $wpdb;
+
+    if( empty( $key ) )
+        return;
+
+    $r = $wpdb->get_col( $wpdb->prepare( "
+        SELECT pm.meta_value FROM {$wpdb->postmeta} pm
+        LEFT JOIN {$wpdb->posts} p ON p.ID = pm.post_id
+        WHERE pm.meta_key = '%s'
+        AND p.post_status = '%s'
+        AND p.post_type = '%s'
+    ", $key, $status, $type ) );
+
+    return $r;
+}
