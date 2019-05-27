@@ -28,6 +28,16 @@ var gulp = require('gulp'),
         .pipe(gulp.dest('assets/css'))
     });
 
+    gulp.task('scripts', function () {
+      return gulp.src('src/js/*.js')
+        // .pipe(concat('main.js'))
+        .pipe(uglify())
+        .pipe(rename({
+          suffix: '.min'
+        }))
+        .pipe(gulp.dest('assets/js'))
+    });
+
 
     gulp.task('images', function() {
       return gulp.src('src/images/**/*')
@@ -53,5 +63,5 @@ gulp.task('watch', function() {
 
 // Default task
 gulp.task('default', ['clean'], function() {
-  gulp.start('styles', 'images', 'watch');
+  gulp.start('styles', 'images', 'scripts', 'watch');
 });

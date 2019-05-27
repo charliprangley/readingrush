@@ -121,7 +121,8 @@ add_action( 'widgets_init', 'readingrush_widgets_init' );
  */
 function readingrush_scripts() {
 	wp_enqueue_style( 'readingrush-style', get_template_directory_uri() . '/assets/css/styles.min.css' );
-
+	wp_enqueue_script( 'jquery-js', get_template_directory_uri() . '/assets/js/jquery.min.js',false,'3.1.4');
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js',false,'3.4.1');
 
 	wp_enqueue_script( 'readingrush-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

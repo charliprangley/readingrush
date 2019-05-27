@@ -2,6 +2,16 @@
 
 
 // BASE
-@import "colors";
-@import "typography";
+@import "base/colors";
+@import "base/typography";
+@import "base/buttons";
 @import "bootstrap/bootstrap";
+
+
+//COMPONENTS
+@import "components/nav";
+@import "components/footer";
+
+
+//PAGE THEMES
+.page-template-page--home { background: $color--blue-6; @import "themes/home"; }
