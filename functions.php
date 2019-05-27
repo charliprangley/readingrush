@@ -120,7 +120,8 @@ add_action( 'widgets_init', 'readingrush_widgets_init' );
  * Enqueue scripts and styles.
  */
 function readingrush_scripts() {
-	wp_enqueue_style( 'readingrush-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'readingrush-style', get_template_directory_uri() . '/assets/css/styles.min.css' );
+
 
 	wp_enqueue_script( 'readingrush-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

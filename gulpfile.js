@@ -11,14 +11,21 @@ var gulp = require('gulp'),
     browserify = require('gulp-browserify'),
     plumber = require('gulp-plumber');
 
-    gulp.task('styles', function() {
-      return sass('src/scss/styles.scss', { style: 'expanded' })
-        .pipe(autoprefixer({browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'], cascade: true}))
-        // .pipe(gulp.dest('style.css'))
-        .pipe(rename({ suffix: '.min' }))
+    gulp.task('styles', function () {
+      return gulp.src('src/scss/styles.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer({
+          browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'],
+          cascade: true
+        }))
+        .pipe(sass.sync({
+          outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        .pipe(rename({
+          suffix: '.min'
+        }))
         .pipe(minifycss())
         .pipe(gulp.dest('assets/css'))
-        .pipe(notify({ message: 'Styles task complete' }));
     });
 
 
