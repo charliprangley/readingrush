@@ -1,0 +1,60 @@
+.register-section {
+  background: $color--grey-2;
+  padding: 20px;
+  margin: 30px 0;
+  label, legend {
+    font-family: $sans-serif;
+    text-transform: uppercase;
+    font-size: 14px !important;
+    color: $color--grey-7;
+  }
+  legend {
+    border: none;
+  }
+}
+
+#profile-details-section {
+  #field_3, #field_4, #field_5 {
+    width: 80%;
+    float: right;
+  }
+}
+
+.field-visibility-settings-header {
+  display: none;
+}
+
+.buddypress-wrap .standard-form input[required]:invalid, .buddypress-wrap .standard-form select[required]:invalid, .buddypress-wrap .standard-form textarea[required]:invalid {
+  border-color: $color--purple !important;
+}
+
+input {
+  border-radius: 3px !important;
+  border-color: $color--grey-4 !important;
+}
+
+.buddypress-wrap .standard-form input[required] {
+  border-width: 1px;
+}
+
+
+
+.buddypress .buddypress-wrap input[type=submit] {
+  border: none;
+  background: $color--purple;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  font-family: $sans-serif;
+  color: $color--white;
+  white-space: normal;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  padding: 15px 20px 10px 20px;
+  &:hover {
+    color: $color--white;
+    background-color: $color--purple-3;
+    border-color: $color--purple-3;
+  }
+}

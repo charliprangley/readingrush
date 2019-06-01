@@ -1,0 +1,49 @@
+#login {
+  h1 a {
+    background-image: url(../images/reading-rush-icon--purple.svg);
+    height: 54px;
+  }
+  form {
+    box-shadow: 0 1px 8px rgba(0,0,0,.13);
+  }
+  label {
+    font-family: $sans-serif;
+    text-transform: uppercase;
+    font-size: 12px !important;
+    color: $color--grey-6;
+  }
+  .forgetmenot {
+    input {
+      margin-top: 0;
+    }
+  }
+.button-primary {
+    border: none;
+    background: $color--purple;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    font-family: $sans-serif;
+    color: $color--white;
+    white-space: normal;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    padding: 5px 20px 0 20px;
+    box-shadow: none;
+    text-shadow: none;
+    height: auto;
+    &:hover {
+      color: $color--white;
+      background-color: $color--purple-3;
+      border-color: $color--purple-3;
+    }
+  }
+}
+#nav, #backtoblog {
+  padding: 0;
+  a {
+    &:hover {
+      color: $color--purple;
+    }
+  }
+}

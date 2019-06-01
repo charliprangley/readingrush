@@ -9,12 +9,10 @@
 ?>
 
 	<?php bp_nouveau_signup_hook( 'before', 'page' ); ?>
-
+	<p>Sign up to participate in the Reading Rush and access the forums!</p>
 	<div id="register-page"class="page register-page">
 
-		<?php bp_nouveau_template_notices(); ?>
-
-			<?php bp_nouveau_user_feedback( bp_get_current_signup_step() ); ?>
+			<!-- <?php bp_nouveau_user_feedback( bp_get_current_signup_step() ); ?> -->
 
 			<form action="" name="signup_form" id="signup-form" class="standard-form signup-form clearfix" method="post" enctype="multipart/form-data">
 
@@ -28,7 +26,8 @@
 
 					<?php /***** Basic Account Details ******/ ?>
 
-					<h2 class="bp-heading"><?php esc_html_e( 'Account Details', 'buddypress' ); ?></h2>
+					<h3 class="bp-heading"><?php esc_html_e( 'Account Details', 'buddypress' ); ?></h3>
+					<p>Choose carefully, your username can't be changed after signup. Everything else can be though!</p>
 
 					<?php bp_nouveau_signup_form(); ?>
 
@@ -44,7 +43,7 @@
 
 					<div class="register-section extended-profile" id="profile-details-section">
 
-						<h2 class="bp-heading"><?php esc_html_e( 'Profile Details', 'buddypress' ); ?></h2>
+						<h3 class="bp-heading"><?php esc_html_e( 'Profile Details', 'buddypress' ); ?></h3>
 
 						<?php /* Use the profile field loop to render input fields for the 'base' profile field group */ ?>
 						<?php while ( bp_profile_groups() ) : bp_the_profile_group(); ?>

@@ -227,3 +227,15 @@ show_admin_bar(false);
 if ( ! is_user_logged_in() ) {
     add_filter( 'show_admin_bar', '__return_false' );
 }
+
+function bp_disable_richtext($enabled, $field_id) {
+	$enabled = false;
+	return $enabled;
+}
+add_filter('bp_xprofile_is_richtext_enabled_for_field', 'bp_disable_richtext', 10, 2);
+
+function custom_login()
+{
+echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/assets/css/styles.min.css" />';
+}
+add_action('login_head', 'custom_login');

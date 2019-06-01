@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:700|PT+Serif:400,400i,700,700i&display=swap');
 
-
 // BASE
 @import "base/colors";
 @import "bootstrap/variables";
+@import "base/overrides";
 @import "base/typography";
 @import "base/buttons";
 @import "base/flex";
@@ -16,9 +16,16 @@
 @import "components/nav";
 @import "components/footer";
 @import "components/video";
+@import "components/forms";
 
 
 //PAGE THEMES
+
+.body {
+  background-color: $color--white;
+}
+
+
 .page-template-page--home {
   background: $color--blue-6;
   background-image: url(../images/background-swoop.png);
@@ -27,8 +34,7 @@
   background-position-y: 40px;
   @import "themes/home"; }
 
-
-  //body
-  .body {
-    background-color: $color--white;
-  }
+.login {
+  background: $color--blue-6;
+  @import "themes/login";
+}
