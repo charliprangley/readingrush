@@ -45,6 +45,7 @@ if ( ! function_exists( 'readingrush_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'readingrush' ),
+			'menu-2' => esc_html__( 'User', 'readingrush' ),
 		) );
 
 		/*
@@ -213,4 +214,16 @@ function get_total_page_count( $key = '', $type = 'post', $status = 'publish' ) 
     ", $key, $status, $type ) );
 
     return $r;
+}
+
+add_action('after_setup_theme', 'remove_admin_bar');
+
+function remove_admin_bar() {
+if (!current_user_can('administrator') && !is_admin()) {
+show_admin_bar(false);
+}
+}
+
+if ( ! is_user_logged_in() ) {
+    add_filter( 'show_admin_bar', '__return_false' );
 }

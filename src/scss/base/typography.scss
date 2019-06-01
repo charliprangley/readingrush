@@ -7,6 +7,7 @@ h1, h2, h3, h4, h5 {
 
 p, .large-body {
   color: $color--text;
+  margin-top: 0;
 }
 
 body {
@@ -21,6 +22,7 @@ h1 {
   font-family: $sans-serif;
   font-size: 45px;
   line-height: 54px;
+  margin-bottom: 10px;
 }
 
 h2 {
@@ -33,6 +35,8 @@ h3 {
   font-family: $sans-serif;
   font-size: 28px;
   line-height: 32px;
+  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 h4 {

@@ -61,3 +61,49 @@
 .icon-bar {
   background-color: $color--purple;
 }
+
+.sub-navbar {
+  margin-bottom: 30px;
+  margin-top: -20px;
+  .avatar {
+    display: inline-block;
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-top: -2px;
+    img {
+      border-radius: 50%;
+    }
+  }
+  .navbar-nav {
+    margin-top: 0;
+  }
+  &--purple {
+    background-color: $color--purple;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    float: right;
+    justify-content: flex-end;
+    padding: 5px;
+    color: $color--white;
+    font-size: 16px;
+    a {
+      color: $color--white;
+      &:hover {
+        color: $color--purple-5;
+      }
+    }
+    @media all and (max-width: $screen-sm) {
+      flex-direction: column;
+    }
+  }
+  .navbar-toggle {
+    padding: 0 0 0 20px;
+  }
+  .icon-bar {
+    background-color: $color--white;
+  }
+  .navbar-collapse {
+    box-shadow: none;
+  }
+}

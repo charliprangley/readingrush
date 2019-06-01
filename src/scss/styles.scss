@@ -3,15 +3,32 @@
 
 // BASE
 @import "base/colors";
+@import "bootstrap/variables";
 @import "base/typography";
 @import "base/buttons";
+@import "base/flex";
 @import "bootstrap/bootstrap";
+@import "base/spacing.scss";
+
 
 
 //COMPONENTS
 @import "components/nav";
 @import "components/footer";
+@import "components/video";
 
 
 //PAGE THEMES
-.page-template-page--home { background: $color--blue-6; @import "themes/home"; }
+.page-template-page--home {
+  background: $color--blue-6;
+  background-image: url(../images/background-swoop.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position-y: 40px;
+  @import "themes/home"; }
+
+
+  //body
+  .body {
+    background-color: $color--white;
+  }

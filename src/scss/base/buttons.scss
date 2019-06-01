@@ -5,6 +5,8 @@
   color: $color--white;
   white-space: normal;
   border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
   &:focus {
     outline: none;
   }
@@ -17,6 +19,7 @@
       color: $color--white;
     }
     &:hover {
+      color: $color--white;
       background-color: $color--purple-3;
       border-color: $color--purple-3;
     }
@@ -27,5 +30,8 @@
         border-color: $color--purple-3;
       }
     }
+  }
+  &-xl {
+    padding: 20px 40px 17px 40px;
   }
 }

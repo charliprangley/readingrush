@@ -2,3 +2,10 @@
   color: $color--green;
   text-transform: uppercase;
 }
+
+.benefits {
+  margin-top: 150px;
+  .benefit-icon {
+    width: 70px;
+  }
+}
