@@ -236,6 +236,59 @@ add_filter('bp_xprofile_is_richtext_enabled_for_field', 'bp_disable_richtext', 1
 
 function custom_login()
 {
-echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/assets/css/styles.min.css" />';
+echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/assets/styles.min.css" />';
 }
 add_action('login_head', 'custom_login');
+
+function rt_change_profile_tab_order() {
+   global $bp;
+
+   $bp->members->nav->edit_nav( array(
+      'position' => 10,
+   ), 'profile' );
+   $bp->members->nav->edit_nav( array(
+      'position' => 30,
+   ), 'activity' );
+	 $bp->members->nav->edit_nav( array(
+			'position' => 40,
+	 ), 'forums' );
+	 $bp->members->nav->edit_nav( array(
+			'position' => 60,
+	 ), 'notifications' );
+   $bp->members->nav->edit_nav( array(
+      'position' => 70,
+   ), 'settings' );
+}
+add_action( 'bp_init', 'rt_change_profile_tab_order', 999 );
+
+function profile_tab_pages() {
+      global $bp;
+
+      bp_core_new_nav_item( array(
+            'name' => 'Update pages and books',
+            'slug' => 'pages',
+            'screen_function' => 'pages_screen',
+            'position' => 20,
+            'parent_url'      => bp_loggedin_user_domain() . '/pages/',
+            'parent_slug'     => $bp->profile->slug,
+            'default_subnav_slug' => 'pages',
+						'show_for_displayed_user' => FALSE
+      ) );
+}
+add_action( 'bp_setup_nav', 'profile_tab_pages' );
+
+
+function pages_screen() {
+
+    // Add title and content here - last is to call the members plugin.php template.
+    add_action( 'bp_template_title', 'pages_title' );
+    add_action( 'bp_template_content', 'pages_content' );
+    bp_core_load_template( 'buddypress/members/single/plugins' );
+}
+function pages_title() {
+    echo 'Update pages';
+}
+
+function pages_content() {
+    include "template-parts/page-count-edit.php";
+}

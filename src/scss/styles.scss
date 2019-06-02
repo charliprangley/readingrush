@@ -20,10 +20,11 @@
 
 
 //PAGE THEMES
-
 .body {
   background-color: $color--white;
 }
+
+@import "themes/profile";
 
 
 .page-template-page--home {
