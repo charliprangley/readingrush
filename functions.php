@@ -388,13 +388,13 @@ function bpfr_hide_visibility_tab() {
 }
 add_action( 'bp_ready', 'bpfr_hide_visibility_tab' );
 
-// /**
-//  * Hiding the home tab.
-//  */
-// function bpfr_hide_home_tab() {
-// 	if( bp_is_active( 'xprofile' ) )
-//
-// 		bp_core_remove_nav_item( 'home' );
-//
-// }
-// add_action( 'bp_ready', 'bpfr_hide_home_tab' );
+/**
+ * Hiding the home tab.
+ */
+function bpfr_hide_home_tab() {
+	if( bp_is_active( 'xprofile' ) )
+
+		bp_core_remove_nav_item( 'front' );
+
+}
+add_action( 'bp_ready', 'bpfr_hide_home_tab' );
