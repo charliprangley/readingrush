@@ -29,15 +29,36 @@
     text-transform: uppercase;
     padding: .5em calc(.5em + 10px) !important;
     transition: color 0.2s ease;
+    color: $color--black;
     &:hover, &:focus {
       background: none !important;
-      color: $color--purple-3 !important;
+      color: $color--green !important;
     }
   }
   li.current a {
-    background: $color--purple !important;
-    color: $color--white !important;
+    background: $color--green !important;
+    color: $color--black !important;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+  }
+}
+
+.profile {
+  h5 {
+    color: $color--grey-5;
+  }
+  &-socials {
+    a {
+      display: flex;
+      align-items: center;
+    }
+    &__icon {
+      width: 40px;
+      height: 40px;
+      margin-right: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
