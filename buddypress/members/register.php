@@ -9,6 +9,7 @@
 ?>
 
 	<?php bp_nouveau_signup_hook( 'before', 'page' ); ?>
+	<h1>Create an account</h1>
 	<p>Sign up to participate in the Reading Rush and access the forums!</p>
 	<div id="register-page"class="page register-page">
 

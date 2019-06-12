@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Registration
+Template Name: Buddypress pages
  *
  */
 
@@ -10,13 +10,13 @@ get_header();
 	<div id="primary" class="content-area">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2">
+				<div class="col-sm-12">
 
 					<?php
 					while ( have_posts() ) :
 						the_post();
 
-						get_template_part( 'template-parts/content', 'page' );
+						get_template_part( 'template-parts/content-buddypress', 'page' );
 
 						// If comments are open or we have at least one comment, load up the comment template.
 						if ( comments_open() || get_comments_number() ) :

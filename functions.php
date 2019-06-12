@@ -389,12 +389,6 @@ function bpfr_hide_visibility_tab() {
 add_action( 'bp_ready', 'bpfr_hide_visibility_tab' );
 
 /**
- * Hiding the home tab.
+ * Hiding the public message button.
  */
-function bpfr_hide_home_tab() {
-	if( bp_is_active( 'xprofile' ) )
-
-		bp_core_remove_nav_item( 'front' );
-
-}
-add_action( 'bp_ready', 'bpfr_hide_home_tab' );
+add_filter('bp_get_send_public_message_button', '__return_false');
