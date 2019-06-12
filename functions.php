@@ -333,7 +333,7 @@ function my_prefix_content() {
     // Like GamiPress shortcodes thought the do_shortcode() function
 
     // Displayed user achievements of all types (hiding the search and filter inputs, and set filter to just completed achievements)
-    echo do_shortcode('[gamipress_achievements search="no" filter="no" filter_value="completed" user_id="' . $user_id . '" limit="20" points_awarded="no" times_earned="no" toggle="no" steps="no"]');
+    echo do_shortcode('[gamipress_achievements columns="4" search="no" filter="no" filter_value="completed" user_id="' . $user_id . '" orderby="date" order="DESC" limit="20" points_awarded="no" times_earned="no" toggle="no" steps="no"]');
 
 
 }
