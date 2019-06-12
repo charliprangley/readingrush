@@ -6,7 +6,7 @@
  * @version 3.0.0
  */
 ?>
-
+<?php if (bp_is_my_profile()) : ?>
 <nav class="<?php bp_nouveau_single_item_subnav_classes(); ?>" id="subnav" role="navigation" aria-label="<?php esc_attr_e( 'Profile menu', 'buddypress' ); ?>">
 	<ul class="subnav">
 
@@ -14,7 +14,7 @@
 
 	</ul>
 </nav><!-- .item-list-tabs -->
-
+<?php endif; ?>
 <?php bp_nouveau_member_hook( 'before', 'profile_content' ); ?>
 
 <div class="profile <?php echo bp_current_action(); ?>">

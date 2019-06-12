@@ -7,8 +7,9 @@
  */
 
 ?>
-
-<h2 class="screen-heading view-profile-screen"><?php esc_html_e( 'View Profile', 'buddypress' ); ?></h2>
+<?php if (bp_is_my_profile()) : ?>
+<h2 class="screen-heading view-profile-screen"><?php esc_html_e( 'Your Profile', 'buddypress' ); ?></h2>
+<?php endif; ?>
 
 <?php bp_nouveau_xprofile_hook( 'before', 'loop_content' ); ?>
 
@@ -24,10 +25,6 @@
 			<?php bp_nouveau_xprofile_hook( 'before', 'field_content' ); ?>
 
 			<div class="bp-widget <?php bp_the_profile_group_slug(); ?>">
-
-				<h3 class="screen-heading profile-group-title">
-					<?php bp_the_profile_group_name(); ?>
-				</h3>
 
 				<table class="profile-fields bp-tables-user">
 

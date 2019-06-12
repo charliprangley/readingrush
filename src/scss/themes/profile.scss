@@ -1,0 +1,43 @@
+.users-header {
+  h1 {
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+  }
+  .user-nicename {
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+  }
+  .gamipress-buddypress-achievements {
+    display: flex;
+    a {
+      margin-right: 5px;
+    }
+  }
+  .gamipress-buddypress-achievement-type-label {
+    display: none;
+  }
+  &--flex {
+    display: flex;
+  }
+}
+
+.bp-navs {
+  border-top: none !important;
+  a {
+    font-family: $sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: .5em calc(.5em + 10px) !important;
+    transition: color 0.2s ease;
+    &:hover, &:focus {
+      background: none !important;
+      color: $color--purple-3 !important;
+    }
+  }
+  li.current a {
+    background: $color--purple !important;
+    color: $color--white !important;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+}
