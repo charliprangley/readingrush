@@ -9,11 +9,6 @@
 <h1>Reading Rush Members</h1>
 	<?php bp_nouveau_before_members_directory_content(); ?>
 
-	<?php if ( ! bp_nouveau_is_object_nav_in_sidebar() ) : ?>
-
-		<?php bp_get_template_part( 'common/nav/directory-nav' ); ?>
-
-	<?php endif; ?>
 
 	<div class="screen-content">
 

@@ -36,7 +36,7 @@
       color: $color--green !important;
     }
   }
-  li.current a {
+  li.current a, li.selected a {
     background: $color--green !important;
     color: $color--black !important;
     border-top-left-radius: 3px;
@@ -53,11 +53,11 @@
   }
 }
 
-.profile {
+.profile .bp-widget {
   h5 {
     color: $color--grey-5;
   }
-  &-socials {
+  .profile-socials {
     a {
       display: flex;
       align-items: center;

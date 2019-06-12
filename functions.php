@@ -46,6 +46,9 @@ if ( ! function_exists( 'readingrush_setup' ) ) :
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'readingrush' ),
 			'menu-2' => esc_html__( 'User', 'readingrush' ),
+			'menu-3' => esc_html__( 'Challenge', 'readingrush' ),
+			'menu-4' => esc_html__( 'Content', 'readingrush' ),
+			'menu-5' => esc_html__( 'Account', 'readingrush' ),
 		) );
 
 		/*

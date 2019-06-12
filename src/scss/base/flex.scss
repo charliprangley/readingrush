@@ -31,6 +31,12 @@ footer {
   &--space {
     justify-content: space-between;
   }
+  &--top {
+    align-items: flex-start;
+  }
+  &--stretch {
+    align-items: stretch;
+  }
 
 }
 

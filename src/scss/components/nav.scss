@@ -39,16 +39,17 @@
 }
 .navbar-nav {
   margin-top: 15px;
-}
-.menu-item {
-  font-family: $sans-serif;
-  font-size: 15px;
-  text-transform: uppercase;
-  a {
-    text-decoration: none;
-    padding: 5px 15px 0 15px;
+  .menu-item {
+    font-family: $sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    a {
+      text-decoration: none;
+      padding: 5px 15px 0 15px;
+    }
   }
 }
+
 
 .btn__login {
   margin-left: 10px;

@@ -12,6 +12,9 @@
       background-color: $color--green !important;
       margin: -5px 10px -5px 0;
     }
+    &.loading .bp-icon {
+      margin: -5px 10px -5px 0;
+    }
   }
   .bp-messages {
     border-color: $color--green !important;
