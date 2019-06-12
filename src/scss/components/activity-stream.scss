@@ -1,0 +1,18 @@
+.activity-list.bp-list {
+  background: none;
+  border: none;
+  padding: 0;
+  .activity-item {
+    box-shadow: none;
+    background: $color--grey-1;
+    border-color: $color--grey-3;
+    .activity-content {
+      .time-since {
+        display: block;
+      }
+      .activity-inner {
+        background: $color--white;
+      }
+    }
+  }
+}

@@ -23,6 +23,7 @@
 
 .bp-navs {
   border-top: none !important;
+  border-bottom: 1px solid $color--grey-4 !important;
   a {
     font-family: $sans-serif;
     font-size: 14px;
