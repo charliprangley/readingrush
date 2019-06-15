@@ -9,7 +9,6 @@
 <h1>Reading Rush Members</h1>
 	<?php bp_nouveau_before_members_directory_content(); ?>
 
-
 	<div class="screen-content">
 
 	<?php bp_get_template_part( 'common/search-and-filters-bar' ); ?>

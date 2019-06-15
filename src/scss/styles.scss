@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:700|PT+Serif:400,400i,700,700i&display=swap');
-
 // BASE
 @import "base/colors";
 @import "bootstrap/variables";
@@ -36,7 +34,11 @@
   background-repeat: no-repeat;
   background-size: 100%;
   background-position-y: 40px;
-  @import "themes/home"; }
+  @import "themes/home";
+  @media all and (max-width: $screen-md) {
+    background-position-y: 100px;
+  }
+}
 
 .login {
   background: $color--blue-6;

@@ -257,6 +257,7 @@ add_filter('bp_xprofile_is_richtext_enabled_for_field', 'bp_disable_richtext', 1
  function custom_login()
  {
  echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/assets/css/styles.min.css" />';
+ echo '<link rel="stylesheet" href="https://use.typekit.net/euv4bqn.css">';
  }
  add_action('login_head', 'custom_login');
 

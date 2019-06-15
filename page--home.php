@@ -14,7 +14,7 @@ $intro_video = get_field('intro_video');
 ?>
 
 <div class="container">
-  <div class="row mt50">
+  <div class="row flex-row mt50 home-header">
     <div class="col-sm-6">
       <h3 class="dates"><?php echo $readathon_dates; ?></h3>
       <?php

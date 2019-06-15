@@ -5,6 +5,7 @@
   width: 70%;
   label, legend {
     font-family: $sans-serif;
+    font-weight: 700 !important;
     text-transform: uppercase;
     font-size: 14px !important;
     color: $color--grey-7;
@@ -46,6 +47,7 @@ input {
   text-transform: uppercase;
   letter-spacing: .4px;
   font-family: $sans-serif;
+  font-weight: 700 !important;
   color: $color--white;
   white-space: normal;
   border-radius: 2px;

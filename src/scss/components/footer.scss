@@ -58,11 +58,15 @@
     list-style: none;
     .menu-item {
       a {
+        font-family: $sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 14px;
         padding-left: 0;
         text-decoration: none;
-        color: rgba($color--black, 0.8);
+        color: rgba($color--black, 0.7);
         &:hover {
-          color: rgba($color--black, 0.5);
+          color: rgba($color--black, 0.4);
         }
     }
   }
