@@ -1,0 +1,85 @@
+.forum-intro {
+  width: 70%;
+}
+
+.forum-titles {
+  font-family: $sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.bbp-body {
+  font-size: 14px;
+  .forum {
+    padding: 15px 8px !important;
+  }
+}
+
+.bbp-header {
+  background-color: $color--green !important;
+  border: 1px solid $color--green !important;
+  border-radius: 3px 3px 0 0
+}
+
+.bbp-forums {
+  border: none !important;
+}
+
+.bbp-search-form {
+  margin-bottom: 20px;
+  input {
+    border: 1px solid;
+  }
+  #bbp_search {
+    padding-left: 5px;
+  }
+  .button {
+    background-color: $color--purple;
+    font-family: $sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $color--white;
+    transition: background-color 0.3s ease;
+    border: 1px solid $color--purple !important;
+    &:hover {
+      background-color: $color--purple-3;
+    }
+  }
+}
+
+.bbp-forum-title {
+  font-size: 18px !important;
+}
+
+.bbp-forum-content {
+  font-size: 16px !important;
+}
+
+#bbpress-forums div.odd, #bbpress-forums ul.odd {
+  background-color: $color--white;
+}
+
+#bbpress-forums div.even, #bbpress-forums ul.even {
+  background-color: $color--blue-6;
+}
+
+.bbp-footer {
+  background: $color--white !important;
+}
+
+.bbp-topic-freshness-author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .bbp-author-avatar {
+    display: flex;
+    margin-right: 3px;
+  }
+  .avatar {
+    border: none !important;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
+}

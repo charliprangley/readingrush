@@ -396,3 +396,20 @@ add_action( 'bp_ready', 'bpfr_hide_visibility_tab' );
  * Hiding the public message button.
  */
 add_filter('bp_get_send_public_message_button', '__return_false');
+
+
+/**
+ * Hiding homepage from forum breadcrumbs.
+ */
+function mycustom_breadcrumb_options() {
+	// Home - default = true
+	$args['include_home']    = false;
+	// Forum root - default = true
+	$args['include_root']    = true;
+	// Current - default = true
+	$args['include_current'] = true;
+
+	return $args;
+}
+
+add_filter('bbp_before_get_breadcrumb_parse_args', 'mycustom_breadcrumb_options' );
