@@ -13,7 +13,9 @@
 
 	<?php bbp_breadcrumb(); ?>
 
-	<?php bbp_forum_subscription_link(); ?>
+	<p><?php bbp_forum_content(); ?></p>
+
+	<span class="btn btn--purple__outline"><?php bbp_forum_subscription_link(); ?></span>
 
 	<?php do_action( 'bbp_template_before_single_forum' ); ?>
 
@@ -22,8 +24,6 @@
 		<?php bbp_get_template_part( 'form', 'protected' ); ?>
 
 	<?php else : ?>
-
-		<?php bbp_single_forum_description(); ?>
 
 		<?php if ( bbp_has_forums() ) : ?>
 

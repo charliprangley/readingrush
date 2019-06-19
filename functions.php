@@ -123,7 +123,16 @@ add_action( 'widgets_init', 'readingrush_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
+
+ if (class_exists('bbPress')) {
+ add_action( 'wp_print_styles', 'deregister_bbpress_styles', 15 );
+ function deregister_bbpress_styles() {
+ wp_deregister_style( 'bbp-default' );
+}
+}
+
 function readingrush_scripts() {
+	wp_enqueue_style( 'bbpress_css', plugins_url().'/bbpress/templates/default/css/bbpress.min.css');
 	wp_enqueue_style( 'readingrush-style', get_template_directory_uri() . '/assets/css/styles.min.css' );
 	wp_enqueue_script( 'jquery-js', get_template_directory_uri() . '/assets/js/jquery.min.js',false,'3.1.4');
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js',false,'3.4.1');
@@ -135,6 +144,7 @@ function readingrush_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
 }
 add_action( 'wp_enqueue_scripts', 'readingrush_scripts' );
 
@@ -413,3 +423,16 @@ function mycustom_breadcrumb_options() {
 }
 
 add_filter('bbp_before_get_breadcrumb_parse_args', 'mycustom_breadcrumb_options' );
+
+/**
+* changing spelling of favorite.
+*/
+add_filter( 'gettext', 'translate_strings', 999, 3 );
+
+function translate_strings( $translated, $text, $domain ) {
+
+// STRING 1
+$translated = str_ireplace( 'Favorite', 'Favourite', $translated );
+
+return $translated;
+}

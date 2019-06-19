@@ -1,3 +1,7 @@
+input {
+  border: 1px solid;
+}
+
 .register-section {
   background: $color--grey-2;
   padding: 20px;
@@ -59,5 +63,43 @@ input {
     color: $color--white;
     background-color: $color--purple-3;
     border-color: $color--purple-3;
+  }
+}
+
+.bbp-topic-form, .bbp-reply-form {
+  margin-top: 130px;
+  .bbp-form {
+    padding: 0 !important;
+    border: none !important;
+    legend {
+      padding: 0 !important;
+      border-bottom: none !important;
+      font-family: $sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 32px;
+    }
+    label {
+      font-family: $sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+    .bbp-submit-wrapper {
+      float: none;
+      .button {
+        background-color: $color--purple;
+        font-family: $sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: $color--white;
+        transition: background-color 0.3s ease;
+        border: 1px solid $color--purple !important;
+        border-radius: 3px;
+        &:hover {
+          background-color: $color--purple-3;
+        }
+      }
+    }
   }
 }
