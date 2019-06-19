@@ -18,6 +18,7 @@
 @import "components/feedback";
 @import "components/activity-stream";
 @import "components/members";
+@import "components/post-navigation";
 
 
 //PAGE THEMES
@@ -46,3 +47,4 @@
 }
 
 @import "themes/forums";
+@import "themes/newsfeed";

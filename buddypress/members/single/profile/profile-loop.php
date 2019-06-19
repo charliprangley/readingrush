@@ -74,6 +74,12 @@
 						<?php endif;?>
 					</div>
 				</div>
+				<div class="row mt50">
+					<div class="col-sm-12">
+						<h5>Stats</h5>
+					</div>
+
+				</div>
 			</div>
 
 			<?php bp_nouveau_xprofile_hook( 'after', 'field_content' ); ?>

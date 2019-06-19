@@ -357,21 +357,21 @@ function my_prefix_content() {
  * Adding a custom pages tab in buddypress profile.
  */
 
-function profile_tab_pages() {
-      global $bp;
-
-      bp_core_new_nav_item( array(
-            'name' => 'Update pages and books',
-            'slug' => 'pages',
-            'screen_function' => 'pages_screen',
-            'position' => 70,
-            'parent_url'      => bp_loggedin_user_domain() . '/pages/',
-            'parent_slug'     => $bp->profile->slug,
-            'default_subnav_slug' => 'pages',
-						'show_for_displayed_user' => FALSE
-      ) );
-}
-add_action( 'bp_setup_nav', 'profile_tab_pages' );
+// function profile_tab_pages() {
+//       global $bp;
+//
+//       bp_core_new_nav_item( array(
+//             'name' => 'Update pages and books',
+//             'slug' => 'pages',
+//             'screen_function' => 'pages_screen',
+//             'position' => 70,
+//             'parent_url'      => bp_loggedin_user_domain() . '/pages/',
+//             'parent_slug'     => $bp->profile->slug,
+//             'default_subnav_slug' => 'pages',
+// 						'show_for_displayed_user' => FALSE
+//       ) );
+// }
+// add_action( 'bp_setup_nav', 'profile_tab_pages' );
 
 
 function pages_screen() {

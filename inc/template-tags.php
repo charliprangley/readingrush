@@ -103,8 +103,8 @@ if ( ! function_exists( 'readingrush_entry_footer' ) ) :
 				),
 				get_the_title()
 			),
-			'<span class="edit-link">',
-			'</span>'
+			'<p class="edit-link">',
+			'</p'
 		);
 	}
 endif;

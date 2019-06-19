@@ -103,3 +103,26 @@ input {
     }
   }
 }
+
+.comment-form {
+  label {
+    display: block;
+    font-family: $sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+  .submit {
+    background-color: $color--purple;
+    font-family: $sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $color--white;
+    transition: background-color 0.3s ease;
+    border: 1px solid $color--purple !important;
+    border-radius: 3px;
+    &:hover {
+      background-color: $color--purple-3;
+    }
+  }
+}
