@@ -41,6 +41,12 @@
     font-size: 14px;
     text-align: center;
     align-self: center;
+    @media all and (max-width: $screen-xs-max) {
+      flex: 0 1 100%;
+    }
+  }
+  &--links {
+    flex: 1 0;
   }
   &--social {
     a {
@@ -50,6 +56,16 @@
   }
   h5 {
     margin-bottom: 10px;
+  }
+  .flex-row {
+    flex-wrap: wrap;
+    @media all and (max-width: $screen-xs-max) {
+      flex-direction: row;
+    }
+    @media all and (max-width: $screen-xs) {
+      flex-direction: column;
+      text-align: center;
+    }
   }
 }
 

@@ -153,6 +153,12 @@
   .gamipress-bbpress-achievement {
     margin: 3px;
   }
+  @media all and (max-width: $screen-xs-max) {
+    justify-content: flex-start;
+    .gamipress-bbpress-achievement {
+      margin: 3px 6px 3px 0;
+    }
+  }
 }
 
 .gamipress-bbpress-achievement-type-label {
@@ -170,6 +176,12 @@
     &:hover {
       color: $color--purple;
     }
+    @media all and (max-width: $screen-xs-max) {
+      margin: 5px 0 !important;
+    }
+  }
+  @media all and (max-width: $screen-xs-max) {
+    margin-bottom: 20px !important;
   }
 }
 

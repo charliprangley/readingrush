@@ -72,6 +72,12 @@
   background-position: 12px;
   padding-left: 20px;
 }
+.btn--purple {
+  @media all and (max-width: $screen-xs-max) {
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+}
 
 .icon-bar {
   background-color: $color--purple;
@@ -108,7 +114,16 @@
         color: $color--purple-5;
       }
     }
+    .navbar-nav>li, .navbar-nav {
+      float: left;
+      margin: 0;
+    }
     @media all and (max-width: $screen-xs-max) {
+      margin-top: 20px;
+      float: none;
+      justify-content: space-between;
+    }
+    @media all and (max-width: $screen-xs) {
       flex-direction: column;
     }
   }

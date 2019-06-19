@@ -17,12 +17,18 @@ input {
   legend {
     border: none;
   }
+  @media all and (max-width: $screen-xs-max) {
+    width: 100%;
+  }
 }
 
 #profile-details-section {
   #field_3, #field_4 {
     width: 80%;
     float: right;
+    @media all and (max-width: $screen-xs) {
+      width: 60%;
+    }
   }
 }
 

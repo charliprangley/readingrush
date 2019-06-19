@@ -82,6 +82,9 @@
       align-items: center;
       justify-content: center;
     }
+    @media all and (max-width: $screen-xs-max) {
+      margin-top: 50px;
+    }
   }
 }
 
