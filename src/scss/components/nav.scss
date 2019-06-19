@@ -1,0 +1,139 @@
+.navbar-brand {
+  position: relative;
+  width: 200px;
+  float: left;
+  height: 70px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(../images/reading-rush-logo--purple.svg);
+    background-repeat: no-repeat;
+    background-size: 200px,auto;
+    background-position: 50%;
+  }
+  span { display: none; }
+}
+.navbar {
+  margin-top: 20px;
+}
+
+.navbar-collapse {
+  @media all and (max-width: $screen-xs-max) {
+    float: right;
+    padding-right: 30px;
+    text-align: right;
+    margin-bottom: 20px;
+    ul {
+      margin-top: 0;
+    }
+  }
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  text-decoration: none;
+}
+.navbar-brand > img {
+  display: block;
+}
+@media (min-width: 768px) {
+  .navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand {
+    margin-left: -15px;
+  }
+}
+.navbar-nav {
+  margin-top: 15px;
+  .menu-item {
+    font-family: $sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    a {
+      text-decoration: none;
+      padding: 2px 15px;
+    }
+  }
+}
+
+
+.btn__login {
+  margin-left: 10px;
+  background: url(../images/icons/icon-login.svg);
+  background-repeat: no-repeat;
+  background-position: 12px;
+  padding-left: 20px;
+}
+.btn--purple {
+  @media all and (max-width: $screen-xs-max) {
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.icon-bar {
+  background-color: $color--purple;
+}
+
+.sub-navbar {
+  margin-bottom: 30px;
+  margin-top: -20px;
+  .avatar {
+    display: inline-block;
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-top: -2px;
+    img {
+      border-radius: 50%;
+    }
+  }
+  .navbar-nav {
+    margin-top: 0;
+  }
+  &--purple {
+    background-color: $color--purple;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    float: right;
+    justify-content: flex-end;
+    padding: 5px;
+    color: $color--white;
+    font-size: 16px;
+    a {
+      color: $color--white;
+      &:hover {
+        color: $color--purple-5;
+      }
+    }
+    .navbar-nav>li, .navbar-nav {
+      float: left;
+      margin: 0;
+    }
+    @media all and (max-width: $screen-xs-max) {
+      margin-top: 20px;
+      float: none;
+      justify-content: space-between;
+    }
+    @media all and (max-width: $screen-xs) {
+      flex-direction: column;
+    }
+  }
+  .navbar-toggle {
+    padding: 0 0 0 20px;
+  }
+  .icon-bar {
+    background-color: $color--white;
+  }
+  .navbar-collapse {
+    box-shadow: none;
+  }
+}

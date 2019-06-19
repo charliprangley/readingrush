@@ -1,0 +1,22 @@
+.buddypress-wrap {
+  .bp-feedback {
+    background: $color--green-6 !important;
+    box-shadow: none !important;
+    border-radius: 3px;
+    padding: 5px 0;
+    &.success .bp-icon {
+      background-color: $color--green !important;
+      margin: -5px 10px -5px 0;
+    }
+    &.info .bp-icon {
+      background-color: $color--green !important;
+      margin: -5px 10px -5px 0;
+    }
+    &.loading .bp-icon {
+      margin: -5px 10px -5px 0;
+    }
+  }
+  .bp-messages {
+    border-color: $color--green !important;
+  }
+}

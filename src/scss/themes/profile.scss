@@ -1,0 +1,130 @@
+.users-header {
+  h1 {
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+  }
+  .user-nicename {
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+  }
+  .gamipress-buddypress-achievements {
+    display: flex;
+    a {
+      margin-right: 5px;
+    }
+  }
+  .gamipress-buddypress-achievement-type-label {
+    display: none;
+  }
+  &--flex {
+    display: flex;
+  }
+}
+
+.bp-navs {
+  border-top: none !important;
+  box-shadow: none !important;
+  a {
+    font-family: $sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: .5em calc(.5em + 10px) .3em !important;
+    transition: color 0.2s ease;
+    color: $color--black;
+    &:hover, &:focus {
+      background: none !important;
+      color: $color--green !important;
+    }
+  }
+  li.current a, li.selected a {
+    background: $color--green !important;
+    color: $color--black !important;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+  &.main-navs {
+    border-bottom: 1px solid $color--grey-4 !important;
+  }
+  &.bp-subnavs {
+    border-bottom: none !important;
+    li.current a {
+      border-radius: 3px;
+    }
+  }
+  .count {
+    display:inline-block !important;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 !important;
+    border: none !important;
+    background-color: $color--purple !important;
+    color: $color--white !important;
+    line-height: 18px;
+    margin-top: -3px;
+  }
+}
+
+.profile .bp-widget {
+  h5 {
+    color: $color--grey-5;
+  }
+  .profile-socials {
+    a {
+      display: flex;
+      align-items: center;
+    }
+    &__icon {
+      width: 40px;
+      height: 40px;
+      margin-right: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media all and (max-width: $screen-xs-max) {
+      margin-top: 50px;
+    }
+  }
+}
+
+#gamipress-achievements-container {
+  border-top: none;
+  .gamipress-achievement {
+    display: flex;
+    &-image {
+      width: initial;
+      margin-bottom: 20px;
+    }
+    &-title {
+      font-size: 22px;
+      a {
+        color: $color--black;
+        &:hover {
+          color: $color--purple;
+        }
+      }
+    }
+  }
+}
+
+.buddypress-wrap .bp-tables-user {
+  tr {
+    text-align: left;
+  }
+  th {
+    font-family: $sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  td {
+    line-height: 22px;
+  }
+
+}
+
+#notifications-bulk-management {
+  .select-wrap {
+    border: 1px solid $color--grey-5;
+  }
+}

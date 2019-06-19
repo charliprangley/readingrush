@@ -14,19 +14,17 @@ if ( ! function_exists( 'readingrush_posted_on' ) ) :
 	function readingrush_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 		}
 
 		$time_string = sprintf( $time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date() )
+			esc_html( get_the_date() )
 		);
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'readingrush' ),
+			esc_html_x( 'Posted on %s', 'readingrush' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -105,8 +103,8 @@ if ( ! function_exists( 'readingrush_entry_footer' ) ) :
 				),
 				get_the_title()
 			),
-			'<span class="edit-link">',
-			'</span>'
+			'<p class="edit-link">',
+			'</p'
 		);
 	}
 endif;

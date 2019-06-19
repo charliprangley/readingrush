@@ -1,0 +1,22 @@
+.dates {
+  color: $color--green;
+  text-transform: uppercase;
+}
+
+.benefits {
+  margin-top: 150px;
+  .benefit-icon {
+    width: 70px;
+  }
+}
+
+.home-header {
+  @media all and (max-width: $screen-xs-max) {
+    .col-sm-6 {
+      width: 100%;
+      .video-container {
+        margin-top: 50px;
+      }
+    }
+  }
+}

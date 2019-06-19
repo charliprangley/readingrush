@@ -1,0 +1,89 @@
+.footer-brand {
+  position: relative;
+  width: 150px;
+  height: 70px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+  display: inline-block;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(../images/reading-rush-logo--purple.svg);
+    background-repeat: no-repeat;
+    background-size: 150px,auto;
+    background-position: 50%;
+  }
+  span { display: none; }
+}
+.site-footer__simple {
+  .footer-brand {
+    width: 70px;
+    float: left;
+    height: 36px;
+    margin-right: 10px;
+    &:before {
+      background: url(../images/reading-rush-icon--purple.svg);
+      background-size: 70px,auto;
+    }
+  }
+}
+
+.site-footer {
+  background-color: $color--green;
+  padding: 20px 0;
+  margin-top: 70px;
+  &--brand {
+    font-size: 14px;
+    text-align: center;
+    align-self: center;
+    @media all and (max-width: $screen-xs-max) {
+      flex: 0 1 100%;
+    }
+  }
+  &--links {
+    flex: 1 0;
+  }
+  &--social {
+    a {
+      text-decoration: none;
+      padding-left: 10px;
+    }
+  }
+  h5 {
+    margin-bottom: 10px;
+  }
+  .flex-row {
+    flex-wrap: wrap;
+    @media all and (max-width: $screen-xs-max) {
+      flex-direction: row;
+    }
+    @media all and (max-width: $screen-xs) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+}
+
+.footer-links {
+    padding-left: 0;
+    list-style: none;
+    .menu-item {
+      a {
+        font-family: $sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 14px;
+        padding-left: 0;
+        text-decoration: none;
+        color: rgba($color--black, 0.7);
+        &:hover {
+          color: rgba($color--black, 0.4);
+        }
+    }
+  }
+}

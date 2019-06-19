@@ -1,0 +1,22 @@
+//Overriding styles on Buddypress registration forms
+
+.buddypress article.page>.entry-header .entry-title {
+  color: $color--black !important;
+  font-size: 45px !important;
+}
+
+.bp-heading {
+  margin: 0 0 20px 0 !important;
+}
+
+.buddypress-wrap .register-page .layout-wrap {
+  flex-flow: column wrap !important;
+}
+
+.buddypress-wrap .standard-form .description {
+  background: none;
+}
+
+.register-page .signup-form .editfield {
+  margin: 40px 0;
+}

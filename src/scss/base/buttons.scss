@@ -1,0 +1,41 @@
+.btn {
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  font-family: $sans-serif;
+  font-weight: 700;
+  color: $color--white;
+  white-space: normal;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  &:focus {
+    outline: none;
+  }
+  &--purple {
+    background-color: $color--purple;
+    border: 1px solid;
+    border-color: $color--purple;
+    transition: background-color 0.3s ease;
+    a {
+      color: $color--white;
+    }
+    &:hover {
+      color: $color--white;
+      background-color: $color--purple-3;
+      border-color: $color--purple-3;
+    }
+    &__outline {
+      border: 1px solid $color--purple;
+      color: $color--purple;
+      &:hover {
+        border-color: $color--purple-3;
+      }
+    }
+  }
+  &-xl {
+    padding: 20px 40px 17px 40px;
+  }
+  &-lg {
+    padding: 10px 20px 7px 20px;
+  }
+}
