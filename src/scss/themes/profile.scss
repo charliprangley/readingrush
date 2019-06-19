@@ -104,3 +104,24 @@
     }
   }
 }
+
+.buddypress-wrap .bp-tables-user {
+  tr {
+    text-align: left;
+  }
+  th {
+    font-family: $sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  td {
+    line-height: 22px;
+  }
+
+}
+
+#notifications-bulk-management {
+  .select-wrap {
+    border: 1px solid $color--grey-5;
+  }
+}
