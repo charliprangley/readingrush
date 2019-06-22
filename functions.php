@@ -435,3 +435,9 @@ $translated = str_ireplace( 'Favorite', 'Favourite', $translated );
 
 return $translated;
 }
+
+function add_topic_description() {
+	    	echo bbp_topic_excerpt();
+}
+
+add_action('bbp_theme_after_topic_title','add_topic_description');
