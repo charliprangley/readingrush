@@ -32,8 +32,8 @@
 			?>
 
 		<?php else : ?>
-
-			<p><?php esc_html_e( 'Please provide a valid activation key.', 'buddypress' ); ?></p>
+			<h1>Activate your Reading Rush account</h1>
+			<p><?php esc_html_e( 'Please provide the key from your activation email.', 'buddypress' ); ?></p>
 
 			<form action="" method="post" class="standard-form" id="activation-form">
 
