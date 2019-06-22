@@ -2,6 +2,14 @@ input {
   border: 1px solid;
 }
 
+.register-page {
+  .bp-feedback {
+    width: 70%;
+    @media all and (max-width: $screen-sm-max) {
+      width: 100%;
+    }
+  }
+}
 .register-section {
   background: $color--grey-2;
   padding: 20px;
@@ -17,7 +25,7 @@ input {
   legend {
     border: none;
   }
-  @media all and (max-width: $screen-xs-max) {
+  @media all and (max-width: $screen-sm-max) {
     width: 100%;
   }
 }
@@ -26,7 +34,10 @@ input {
   #field_3, #field_4 {
     width: 80%;
     float: right;
-    @media all and (max-width: $screen-xs) {
+    @media all and (max-width: $screen-md-max) {
+      width: 75%;
+    }
+    @media all and (max-width: $screen-xs-max) {
       width: 60%;
     }
   }
