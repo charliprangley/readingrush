@@ -128,3 +128,53 @@
     border: 1px solid $color--grey-5;
   }
 }
+
+.friends-request-list {
+  .item-title {
+    font-family: $sans-serif;
+    font-weight: 700;
+    font-size: 26px !important;
+  }
+}
+.friends-meta, .activity-read-more, .generic-button {
+  button, a {
+    text-transform: uppercase !important;
+    letter-spacing: .4px;
+    font-family: $sans-serif !important;
+    font-weight: 700 !important;
+    white-space: normal;
+    border-radius: 2px;
+    font-size: 15px !important;
+    &.accept, &.send-message {
+      color: $color--white !important;
+      background-color: $color--purple !important;
+      border-color: $color--purple !important;
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: $color--purple-3 !important;
+      }
+    }
+  }
+}
+
+.activity-read-more a {
+  color: $color--white !important;
+  background-color: $color--purple !important;
+  border-color: $color--purple !important;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: $color--purple-3 !important;
+  }
+}
+
+.members-friends-list {
+  .list-wrap {
+    padding: 15px !important;
+    .item-block {
+      width: 100% !important;
+    }
+  }
+  &.bp-list>li {
+    border-bottom: none !important;
+  }
+}

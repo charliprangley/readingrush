@@ -21,11 +21,15 @@
 }
 
 .members-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
   .list-wrap {
     min-height: initial !important;
+    height: 100%;
     padding-bottom: 20px !important;
     background: $color--blue-6 !important;
-    border-color: $color--blue !important;
+    border: 1px solid $color--blue !important;
     .member-name {
       margin-top: 25px !important;
       margin-bottom: 0 !important;
@@ -35,6 +39,7 @@
     }
     .item-block {
       min-height: initial !important;
+      margin-bottom: 0 !important;
     }
   }
   .list-title {
@@ -49,4 +54,41 @@
   .bp-pagination .top {
     padding-top: 20px;
   }
+}
+
+.friendship-button {
+  &.not_friends {
+    button, a {
+      background-color: $color--purple !important;
+      color: $color--white !important;
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: $color--purple-3 !important;
+      }
+    }
+  }
+  &.pending_friend, &.is_friend {
+    button, a {
+      background-color: transparent !important;
+      color: $color--purple !important;
+      &:hover {
+        border-color: $color--purple-3 !important;
+        color: $color--purple-3 !important;
+      }
+    }
+  }
+  button, a {
+    font-family: $sans-serif !important;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    font-weight: 700 !important;
+    border: 1px solid $color--purple !important;
+    border-radius: 3px;
+    font-size: 15px !important;
+  }
+}
+
+.members-meta {
+  position: relative !important;
+  padding: 0 10px !important;
 }
