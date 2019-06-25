@@ -30,6 +30,7 @@
 				</div>
 				<div class="site-footer--brand">
 						<a class="footer-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><span>The Reading Rush</span></a>
+						<span class="previously">(Previously Booktubeathon)</span>
 						<div class="site-footer--social">
 							<a href="https://www.youtube.com/thereadingrush">
 								<svg width="31" height="23" viewBox="0 0 31 23" fill="none" xmlns="http://www.w3.org/2000/svg">

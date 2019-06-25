@@ -19,6 +19,13 @@
     background-position: 50%;
   }
   span { display: none; }
+  @media all and (max-width: $screen-xs-max) {
+    width: 150px;
+    height: 60px;
+    &:before {
+      background-size: 150px,auto;
+    }
+  }
 }
 .navbar {
   margin-top: 20px;
@@ -85,7 +92,7 @@
 
 .sub-navbar {
   margin-bottom: 30px;
-  margin-top: -20px;
+  margin-top: -50px;
   .avatar {
     display: inline-block;
     margin-right: 3px;
@@ -135,5 +142,23 @@
   }
   .navbar-collapse {
     box-shadow: none;
+  }
+  @media all and (max-width: $screen-xs-max) {
+    margin-top: -30px;
+  }
+}
+
+.previously {
+  font-size: 12px;
+  font-family: $sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba($color--black, .5);
+  display: block;
+  float: left;
+  clear: both;
+  margin-left: 5px;
+  @media all and (max-width: $screen-xs-max) {
+    font-size: 10px;
   }
 }
