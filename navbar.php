@@ -15,8 +15,9 @@
        <span class="icon-bar"></span>
        <span class="icon-bar"></span>
      </button>
-     <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><span>The Reading Rush</span></a>
-   </div>
+       <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><span>The Reading Rush</span></a>
+       <span class="previously">(Previously Booktubeathon)</span>
+     </div>
    <div id="navbar" class="navbar-collapse collapse">
      <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu', 'container' => false, 'items_wrap' => '<ul class="nav navbar-nav navbar-right %2$s">%3$s</ul>' ) ); ?>
    </div><!--/.nav-collapse -->

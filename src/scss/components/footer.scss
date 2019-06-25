@@ -44,6 +44,11 @@
     @media all and (max-width: $screen-xs-max) {
       flex: 0 1 100%;
     }
+    .previously {
+      margin-bottom: 20px;
+      float: none;
+      margin-left: 0;
+    }
   }
   &--links {
     flex: 1 0;
