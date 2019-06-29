@@ -32,6 +32,27 @@
       }
     }
   }
+  &--green {
+    background-color: $color--green;
+    border: 1px solid;
+    border-color: $color--green;
+    transition: background-color 0.3s ease;
+    a {
+      color: $color--white;
+    }
+    &:hover {
+      color: $color--white;
+      background-color: $color--green-3;
+      border-color: $color--green-3;
+    }
+    &__outline {
+      border: 1px solid $color--green;
+      color: $color--green;
+      &:hover {
+        border-color: $color--green-3;
+      }
+    }
+  }
   &-xl {
     padding: 20px 40px 17px 40px;
   }
