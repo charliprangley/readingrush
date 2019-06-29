@@ -11,6 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<h5 class="breadcrumb"><a href="<?php echo site_url();?>/newsfeed">< Back to all posts</a></h5>
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -24,6 +25,7 @@
 				<?php
 				readingrush_posted_on();
 				readingrush_posted_by();
+				the_category();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -52,8 +54,4 @@
 		) );
 		?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php readingrush_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

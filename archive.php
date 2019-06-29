@@ -13,16 +13,17 @@ get_header();
 	<div id="primary" class="content-area">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-9">
+				<div class="col-sm-12">
 
 					<?php if ( have_posts() ) : ?>
-
+						<h5 class="breadcrumb"><a href="<?php echo site_url();?>/newsfeed">< Back to all posts</a></h5>
 						<header class="page-header">
 							<?php
 							the_archive_title( '<h1 class="page-title">', '</h1>' );
 							the_archive_description( '<div class="archive-description">', '</div>' );
 							?>
 						</header><!-- .page-header -->
+
 						<?php
 						/* Start the Loop */
 						while ( have_posts() ) :

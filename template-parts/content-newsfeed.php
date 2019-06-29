@@ -23,6 +23,7 @@
 				<?php
 				readingrush_posted_on();
 				readingrush_posted_by();
+				the_category();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

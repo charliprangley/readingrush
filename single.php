@@ -13,7 +13,7 @@ get_header();
 	<div id="primary" class="content-area">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-9">
+				<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
 					<?php
 					while ( have_posts() ) :
 						the_post();
