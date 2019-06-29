@@ -1,0 +1,19 @@
+.friends-meta {
+  position: relative !important;
+}
+
+.members-friends-list {
+  .user-update {
+    padding: 0 !important;
+    border: none !important;
+    text-align: center !important;
+    .update {
+      padding: 0 !important;
+      font-size: 15px;
+      line-height: 23px;
+      .activity-read-more {
+        margin-top: 16px !important;
+      }
+    }
+  }
+}
