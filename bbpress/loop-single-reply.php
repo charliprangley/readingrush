@@ -38,34 +38,39 @@
 
 <div <?php bbp_reply_class(); ?>>
 
-	<div class="bbp-reply-author">
-
-		<?php do_action( 'bbp_theme_before_reply_author_details' ); ?>
-
-		<?php bbp_reply_author_link( array( 'sep' => '<br />', 'show_role' => false ) ); ?>
-
-		<?php if ( bbp_is_user_keymaster() ) : ?>
-
-			<?php do_action( 'bbp_theme_before_reply_author_admin_details' ); ?>
-
-			<div class="bbp-reply-ip"><?php bbp_author_ip( bbp_get_reply_id() ); ?></div>
-
-			<?php do_action( 'bbp_theme_after_reply_author_admin_details' ); ?>
-
-		<?php endif; ?>
-
-		<?php do_action( 'bbp_theme_after_reply_author_details' ); ?>
-
-	</div><!-- .bbp-reply-author -->
-
 	<div class="bbp-reply-content">
+		<div class="bbp-reply-author">
 
-		<?php do_action( 'bbp_theme_before_reply_content' ); ?>
+			<?php do_action( 'bbp_theme_before_reply_author_details' ); ?>
 
-		<?php bbp_reply_content(); ?>
+			<?php bbp_reply_author_link( array( 'sep' => '<br />', 'show_role' => false ) ); ?>
 
-		<?php do_action( 'bbp_theme_after_reply_content' ); ?>
+			<?php if ( bbp_is_user_keymaster() ) : ?>
 
+				<?php do_action( 'bbp_theme_before_reply_author_admin_details' ); ?>
+
+				<?php do_action( 'bbp_theme_after_reply_author_admin_details' ); ?>
+
+			<?php endif; ?>
+
+			<?php do_action( 'bbp_theme_after_reply_author_details' ); ?>
+
+		</div><!-- .bbp-reply-author -->
+		<div class="bbp-reply-content--text">
+
+			<?php do_action( 'bbp_theme_before_reply_content' ); ?>
+
+			<?php bbp_reply_content(); ?>
+
+			<?php do_action( 'bbp_theme_after_reply_content' ); ?>
+
+		</div>
+		<div class="bbp-reply-content--meta">
+
+
+
+
+		</div>
 	</div><!-- .bbp-reply-content -->
 
 </div><!-- .reply -->

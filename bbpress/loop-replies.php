@@ -6,10 +6,24 @@
  * @package bbPress
  * @subpackage Theme
  */
-
+ $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 ?>
 
 <?php do_action( 'bbp_template_before_replies_loop' ); ?>
+<div class="bbp-pagination">
+	<div id="pagination-links" class="bbp-pagination-links"><?php
+		//Change 15 to number of replies you specified in wpup_bbp_list_replies
+		//First find the number of parent posts only and pass that to the custom pagination function
+		$replyposts = bbpress()->reply_query->posts;
+		$numparentreplies = 0;
+		foreach($replyposts as $value){
+		if($value->reply_to == 0) {
+		    $numparentreplies++;
+		  }
+		}
+		wpup_custom_pagination($numparentreplies,"",$paged, 15); ?>
+	</div>
+</div>
 
 <ul id="topic-<?php bbp_topic_id(); ?>-replies" class="forums bbp-replies">
 
@@ -41,7 +55,10 @@
 
 		<?php if ( bbp_thread_replies() ) : ?>
 
-			<?php bbp_list_replies(); ?>
+			<?php
+			//Change 15 to number of replies you want users to see per page
+			wpup_bbp_list_replies(array('page' => $paged, 'per_page' => 15));
+			?>
 
 		<?php else : ?>
 
@@ -76,5 +93,19 @@
 	</li><!-- .bbp-footer -->
 
 </ul><!-- #topic-<?php bbp_topic_id(); ?>-replies -->
+<div class="bbp-pagination">
+	<div id="pagination-links" class="bbp-pagination-links"><?php
+		//Change 15 to number of replies you specified in wpup_bbp_list_replies
+		//First find the number of parent posts only and pass that to the custom pagination function
+		$replyposts = bbpress()->reply_query->posts;
+		$numparentreplies = 0;
+		foreach($replyposts as $value){
+		if($value->reply_to == 0) {
+		    $numparentreplies++;
+		  }
+		}
+		wpup_custom_pagination($numparentreplies,"",$paged, 15); ?>
+	</div>
+</div>
 
 <?php do_action( 'bbp_template_after_replies_loop' ); ?>
