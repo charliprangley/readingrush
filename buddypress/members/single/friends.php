@@ -16,7 +16,7 @@
 		<?php endif; ?>
 	</ul>
 </nav><!-- .bp-navs -->
-
+<p>Visit the <a href="<?php echo site_url(); ?>/members">members page</a> to find some new friends!</p>
 <?php bp_get_template_part( 'common/search-and-filters-bar' ); ?>
 
 <?php
@@ -26,7 +26,6 @@ switch ( bp_current_action() ) :
 	case 'my-friends':
 		bp_nouveau_member_hook( 'before', 'friends_content' );
 		?>
-
 		<div class="members friends" data-bp-list="members">
 
 			<div id="bp-ajax-loader"><?php bp_nouveau_user_feedback( 'member-friends-loading' ); ?></div>

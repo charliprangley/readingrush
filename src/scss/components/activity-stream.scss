@@ -10,9 +10,35 @@
       .time-since {
         display: block;
       }
+      .activity-header {
+        img {
+          border-radius: 50%;
+        }
+      }
       .activity-inner {
         background: $color--white;
+        p {
+          font-size: 16px;
+          line-height: 27px;
+        }
       }
     }
   }
+}
+
+.activity-update-form {
+  box-shadow: none;
+  background: $color--grey-1;
+  border-color: $color--grey-3;
+  margin-bottom: 20px;
+  textarea {
+    border-color: $color--grey-3 !important;
+  }
+  #whats-new-submit {
+    margin-top: 0 !important;
+  }
+}
+
+.activity-type-navs {
+  margin-top: 40px;
 }
