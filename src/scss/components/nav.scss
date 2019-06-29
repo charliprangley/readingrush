@@ -132,6 +132,12 @@
     }
     @media all and (max-width: $screen-xs) {
       flex-direction: column;
+      .menu-item {
+        font-size: 12px;
+        a {
+          padding: 5px 10px 2px;
+        }
+      }
     }
   }
   .navbar-toggle {

@@ -29,6 +29,11 @@
 					<div class="col-sm-7">
 						<h5>Bio</h5>
 						<?php bp_profile_field_data('field=bio');?>
+						<div class="mt50">
+							<h5>Reading Rush TBR</h5>
+							<p>Books I want to read during The Reading Rush:</p>
+							<em><?php echo bp_profile_field_data('field=Your Reading Rush To Be Read list'); ?></em>
+						</div>
 					</div>
 					<div class="col-sm-5 profile-socials">
 						<h5>Social links</h5>
