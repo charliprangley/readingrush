@@ -28,6 +28,14 @@
   .subscription-toggle {
     margin-left: 9px !important;
   }
+  @media all and (max-width: $screen-xs) {
+    .bbp-reply-author {
+      display: none;
+    }
+    .bbp-reply-content {
+      margin-left: 0 !important;
+    }
+  }
 }
 
 .bbp-forums, .bbp-topics, .bbp-replies {
@@ -156,11 +164,13 @@
   align-items: center;
   .gamipress-bbpress-achievement {
     margin: 3px;
-  }
-  @media all and (max-width: $screen-xs-max) {
-    .gamipress-bbpress-achievement {
-      margin: 3px 6px 3px 0;
+    @media all and (max-width: $screen-xs-max) {
+        margin: 3px 6px 3px 0;
     }
+  }
+  @media all and (max-width: $screen-xs) {
+    justify-content: flex-start;
+    clear: both;
   }
 }
 
@@ -182,6 +192,11 @@
     @media all and (max-width: $screen-xs-max) {
       margin: 5px 0 !important;
     }
+    @media all and (max-width: $screen-xs) {
+      margin-left: 10px !important;
+      position: absolute;
+      top: 5px;
+    }
   }
   @media all and (max-width: $screen-xs-max) {
     margin-bottom: 20px !important;
@@ -189,6 +204,9 @@
   @media all and (max-width: $screen-xs) {
     img.avatar {
           position: relative !important;
+          width: 30px !important;
+          top: 0 !important;
+          float: left !important;
     }
   }
 }
@@ -214,6 +232,11 @@
     margin-left: 0 !important;
     .bbp-reply-author {
       flex-basis: 15%;
+      @media all and (max-width: $screen-xs) {
+        position: relative;
+        width: 100% !important;
+        text-align: left !important;
+      }
     }
     &--text {
       width: 80%;
@@ -228,6 +251,13 @@
       @media all and (max-width: $screen-sm-max) {
         width: 100%;
       }
+      @media all and (max-width: $screen-xs) {
+        border-left: none;
+        padding: 0 !important;
+      }
+    }
+    @media all and (max-width: $screen-xs) {
+      flex-direction: column;
     }
   }
 }

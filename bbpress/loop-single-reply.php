@@ -65,12 +65,6 @@
 			<?php do_action( 'bbp_theme_after_reply_content' ); ?>
 
 		</div>
-		<div class="bbp-reply-content--meta">
-
-
-
-
-		</div>
 	</div><!-- .bbp-reply-content -->
 
 </div><!-- .reply -->
