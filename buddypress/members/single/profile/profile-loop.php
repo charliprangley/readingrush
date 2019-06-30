@@ -31,7 +31,6 @@
 						<?php bp_profile_field_data('field=bio');?>
 						<div class="mt50">
 							<h5>Reading Rush TBR</h5>
-							<p>Books I want to read during The Reading Rush:</p>
 							<em><?php echo bp_profile_field_data('field=Your Reading Rush To Be Read list'); ?></em>
 						</div>
 					</div>
