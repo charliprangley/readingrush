@@ -54,7 +54,7 @@
 
 					<?php if ( bp_get_member_latest_update() && ! bp_nouveau_loop_is_grid() ) : ?>
 					<div class="user-update">
-						<p class="update"> <?php bp_member_latest_update(); ?></p>
+						<p class="update"><?php bp_member_latest_update(); ?></p>
 					</div>
 						<?php endif; ?>
 

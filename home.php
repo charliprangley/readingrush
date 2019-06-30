@@ -13,8 +13,12 @@ get_header();
 	<div id="primary" class="content-area">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-9">
+				<div class="col-sm-12">
 					<h1>Newsfeed</h1>
+					<?php get_sidebar(); ?>
+				</div>
+			</div>
+			<div class="row flex-wrap newsfeed--posts">
 					<?php
 					while ( have_posts() ) :
 						the_post();
@@ -28,8 +32,10 @@ get_header();
 
 					endwhile; // End of the loop.
 					?>
-				</div>
 			</div>
+			<nav class="pagination">
+			<?php pagination_bar(); ?>
+			</nav>
 		</div>
 	</div><!-- #primary -->
 

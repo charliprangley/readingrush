@@ -6,7 +6,7 @@
  * @version 3.0.0
  */
 ?>
-
+	<h1>Activity</h1>
 	<?php bp_nouveau_before_activity_directory_content(); ?>
 
 	<?php if ( is_user_logged_in() ) : ?>
@@ -38,4 +38,3 @@
 		<?php bp_nouveau_after_activity_directory_content(); ?>
 
 	</div><!-- // .screen-content -->
-

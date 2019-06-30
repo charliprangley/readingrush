@@ -53,13 +53,25 @@
     }
   }
   .count {
+    background-color: $color--purple !important;
+    color: $color--white !important;
+  }
+}
+
+#friends-personal-li {
+  .count {
+    background: transparent !important;
+    color: $color--purple !important;
+  }
+}
+
+.users-nav {
+  .count {
     display:inline-block !important;
     min-width: 20px;
     height: 20px;
     padding: 0 !important;
     border: none !important;
-    background-color: $color--purple !important;
-    color: $color--white !important;
     line-height: 18px;
     margin-top: -3px;
   }

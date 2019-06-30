@@ -1,13 +1,17 @@
+button {
+  color: $color--white;
+}
+
 .btn, button {
   text-transform: uppercase;
   letter-spacing: .4px;
   font-family: $sans-serif;
   font-weight: 700;
-  color: $color--white;
   white-space: normal;
   border-radius: 2px;
   text-decoration: none;
   display: inline-block;
+  text-align: center;
   &:focus {
     outline: none;
   }
@@ -16,6 +20,7 @@
     border: 1px solid;
     border-color: $color--purple;
     transition: background-color 0.3s ease;
+    color: $color--white;
     a {
       color: $color--white;
     }
@@ -32,10 +37,56 @@
       }
     }
   }
+  &--green {
+    background-color: $color--green;
+    border: 1px solid;
+    border-color: $color--green;
+    transition: background-color 0.3s ease;
+    color: rgba($color--black, .7);
+    a {
+      color: rgba($color--black, .7);
+    }
+    &:hover {
+      color: rgba($color--black, .7);
+      background-color: $color--green-3;
+      border-color: $color--green-3;
+    }
+    &__outline {
+      border: 1px solid $color--green;
+      color: $color--green;
+      &:hover {
+        border-color: $color--green-3;
+      }
+    }
+  }
   &-xl {
     padding: 20px 40px 17px 40px;
   }
   &-lg {
     padding: 10px 20px 7px 20px;
+  }
+  &-md {
+    padding: 5px 20px 4px 20px;
+  }
+}
+
+input.search-submit {
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  font-family: $sans-serif;
+  font-weight: 700;
+  color: $color--white;
+  white-space: normal;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  background-color: $color--purple;
+  border: 1px solid;
+  border-color: $color--purple !important;
+  transition: background-color 0.3s ease;
+  &:hover {
+    color: $color--white;
+    background-color: $color--purple-3;
+    border-color: $color--purple-3;
   }
 }

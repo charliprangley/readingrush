@@ -1,0 +1,19 @@
+.color-box {
+  border-radius: 3px;
+  box-shadow: -1px 1px 3px rgba($color--black, 0.1);
+  padding: 30px;
+  height: 100%;
+  h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  &--white {
+    background-color: $color--white;
+  }
+  &--flex {
+    display: flex;
+    @media all and (max-width: $screen-xs) {
+      flex-direction: column;
+    }
+  }
+}

@@ -45,8 +45,29 @@
   .list-title {
     padding: 0 !important;
   }
-  .last-activity {
-    margin-top: 0 !important;
+  @media all and (max-width: $screen-xs-max) and (min-width: 24em) {
+    .item-entry {
+      width: 50% !important;
+      &.even {
+        padding-right: 0 !important;
+        padding-left: 5px !important;
+      }
+      &.odd {
+        padding-right: 5px !important;
+      }
+    }
+  }
+  @media all and (max-width: 24em) {
+    .item-entry {
+      width: 100% !important;
+      &.even {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+      }
+      &.odd {
+        padding-right: 0 !important;
+      }
+    }
   }
 }
 
@@ -71,6 +92,8 @@
     button, a {
       background-color: transparent !important;
       color: $color--purple !important;
+      font-size: 11px !important;
+      line-height: 15px;
       &:hover {
         border-color: $color--purple-3 !important;
         color: $color--purple-3 !important;
@@ -91,4 +114,8 @@
 .members-meta {
   position: relative !important;
   padding: 0 10px !important;
+}
+
+.bp-list li .item-meta {
+  line-height: 16px;
 }

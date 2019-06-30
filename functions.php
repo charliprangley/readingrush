@@ -435,3 +435,123 @@ function add_topic_description() {
 }
 
 add_action('bbp_theme_after_topic_title','add_topic_description');
+
+/**
+ * Putting pagination in forum
+ */
+
+ function wpup_bbp_list_replies( $args = array() ) {
+
+    // Reset the reply depth
+    bbpress()->reply_query->reply_depth = 0;
+
+    // In reply loop
+    bbpress()->reply_query->in_the_loop = true;
+
+    $r = bbp_parse_args( $args, array(
+        'walker'       => null,
+        'max_depth'    => bbp_thread_replies_depth(),
+        'style'        => 'ul',
+        'callback'     => null,
+        'end_callback' => null
+    ), 'list_replies' );
+
+    // Get replies to loop through in $_replies
+    $walker = new BBP_Walker_Reply;
+    $walker->paged_walk( bbpress()->reply_query->posts, $r['max_depth'], $r['page'], $r['per_page'], $r );
+
+    bbpress()->max_num_pages = $walker->max_pages;
+    bbpress()->reply_query->in_the_loop = false;
+}
+
+//Custom Pagination function
+function wpup_custom_pagination($numreplies='', $pagerange='', $paged='', $repliesperpage='') {
+
+  /**
+   * $pagerange
+   * How many pages to display after the current page
+   * Used in combination with 'shaw_all' => false
+   */
+  if (empty($pagerange)) {
+    $pagerange = 3;
+  }
+
+  /**
+   * $numreplies
+   * What is the total number of replies in the current topic
+   * $numpages
+   * Calculate total number of pages to display based on number of replies and replies per page
+   */
+  if ($numreplies != '') {
+    $numpages = ceil($numreplies / $repliesperpage);
+  }
+
+  //assign value of 1 to $paged variable in case it's not passed on
+  global $paged;
+  if (empty($paged)) {
+    $paged = 1;
+  }
+
+  /**
+   * We construct the pagination arguments to enter into our paginate_links
+   * function.
+   */
+ $pagination_args = array(
+    'base'            => get_pagenum_link(1) . '%_%',
+    'format'          => 'page/%#%',
+    'total'           => $numpages,
+    'current'         => $paged,
+    'show_all'        => False,
+    'end_size'        => 1,
+    'mid_size'        => $pagerange,
+    'prev_next'       => True,
+    'prev_text'       => __('&lt;'),
+    'next_text'       => __('&gt;'),
+    'type'            => 'plain',
+    'add_args'        => false,
+    'add_fragment'    => ''
+  );
+
+  $paginate_links = paginate_links($pagination_args);
+
+  if ($paginate_links) {
+    echo "<nav class='custom-pagination'>";
+      echo $paginate_links;
+    echo "</nav>";
+  }
+
+}
+
+/**
+ * Remove widget title
+ **/
+
+ // REMOVE WIDGET TITLE IF IT BEGINS WITH EXCLAMATION POINT
+add_filter( 'widget_title', 'remove_widget_title' );
+function remove_widget_title( $widget_title ) {
+    if ( substr ( $widget_title, 0, 1 ) == '!' )
+        return;
+    else
+        return ( $widget_title );
+}
+
+/**
+ * pagination on blog arcive pages
+ **/
+
+function pagination_bar() {
+    global $wp_query;
+
+    $total_pages = $wp_query->max_num_pages;
+
+    if ($total_pages > 1){
+        $current_page = max(1, get_query_var('paged'));
+
+        echo paginate_links(array(
+            'base' => get_pagenum_link(1) . '%_%',
+            'format' => '/page/%#%',
+            'current' => $current_page,
+            'total' => $total_pages,
+        ));
+    }
+}

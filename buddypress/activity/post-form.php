@@ -15,7 +15,7 @@ bp_nouveau_before_activity_post_form();
 ?>
 
 <h2 class="bp-screen-reader-text"><?php echo esc_html_x( 'Post Update', 'heading', 'buddypress' ); ?></h2>
-
+<h5>Post an update</h5>
 <div id="bp-nouveau-activity-form" class="activity-update-form"></div>
 
 <?php
