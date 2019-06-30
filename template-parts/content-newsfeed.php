@@ -8,26 +8,29 @@
  */
 
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header entry-header__newsfeed">
-		<?php
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-content">
-				<?php echo get_the_excerpt() ?>
-			</div><!-- .entry-content -->
-			<div class="entry-meta">
+<div class="col-md-4">
+	<div class="color-box color-box--white color-box__newsfeed">
+		<div>
+				<div class="entry-meta entry-meta--top">
+					<div class="posted-on">
+						<?php the_time('F jS, Y');?>
+					</div>
+					<?php the_category();?>
+				</div>
 				<?php
-				readingrush_posted_on();
-				readingrush_posted_by();
-				the_category();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-
-</article><!-- #post-<?php the_ID(); ?> -->
+					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+					?>
+					<div class="entry-meta entry-meta--author">
+						<?php
+							readingrush_posted_by();
+						?>
+					</div>
+					<?php if (get_the_post_thumbnail()) : ?>
+					<div class="thumbnail">
+						<?php echo get_the_post_thumbnail(); ?>
+					</div>
+				<?php endif; ?>
+				</div>
+			<a href="<?php echo get_permalink(); ?>" class="btn btn-md btn--green">Read post</a>
+	</div>
+</div>

@@ -1,4 +1,7 @@
-.post-categories {
+.post-categories, .widget_categories {
+  ul {
+    padding-left: 0;
+  }
   list-style-type: none;
   padding-inline-start: 0;
   li {
@@ -13,5 +16,15 @@
         border-color: $color--purple-3;
       }
     }
+  }
+}
+
+.widget_categories {
+  font-family: $sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  a {
+    text-decoration: none;
   }
 }

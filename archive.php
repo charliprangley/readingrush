@@ -16,7 +16,7 @@ get_header();
 				<div class="col-sm-12">
 
 					<?php if ( have_posts() ) : ?>
-						<h5 class="breadcrumb"><a href="<?php echo site_url();?>/newsfeed">< Back to all posts</a></h5>
+						<h5 class="breadcrumb"><a href="<?php echo site_url();?>/newsfeed">< Back to the newsfeed</a></h5>
 						<header class="page-header">
 							<?php
 							the_archive_title( '<h1 class="page-title">', '</h1>' );

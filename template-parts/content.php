@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h5 class="breadcrumb"><a href="<?php echo site_url();?>/newsfeed">< Back to all posts</a></h5>
+		<h5 class="breadcrumb"><a href="<?php echo site_url();?>/newsfeed">< Back to the newsfeed</a></h5>
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );

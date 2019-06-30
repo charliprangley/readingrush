@@ -521,3 +521,37 @@ function wpup_custom_pagination($numreplies='', $pagerange='', $paged='', $repli
   }
 
 }
+
+/**
+ * Remove widget title
+ **/
+
+ // REMOVE WIDGET TITLE IF IT BEGINS WITH EXCLAMATION POINT
+add_filter( 'widget_title', 'remove_widget_title' );
+function remove_widget_title( $widget_title ) {
+    if ( substr ( $widget_title, 0, 1 ) == '!' )
+        return;
+    else
+        return ( $widget_title );
+}
+
+/**
+ * pagination on blog arcive pages
+ **/
+
+function pagination_bar() {
+    global $wp_query;
+
+    $total_pages = $wp_query->max_num_pages;
+
+    if ($total_pages > 1){
+        $current_page = max(1, get_query_var('paged'));
+
+        echo paginate_links(array(
+            'base' => get_pagenum_link(1) . '%_%',
+            'format' => '/page/%#%',
+            'current' => $current_page,
+            'total' => $total_pages,
+        ));
+    }
+}
