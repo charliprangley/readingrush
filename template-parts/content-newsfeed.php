@@ -20,11 +20,6 @@
 				<?php
 					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 					?>
-					<div class="entry-meta entry-meta--author">
-						<?php
-							readingrush_posted_by();
-						?>
-					</div>
 					<?php if (get_the_post_thumbnail()) : ?>
 					<div class="thumbnail">
 						<?php echo get_the_post_thumbnail(); ?>

@@ -12,9 +12,12 @@ get_header();
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
 
 		<?php if ( have_posts() ) : ?>
-
+			<h5 class="breadcrumb"><a href="<?php echo site_url();?>/newsfeed">< Back to the newsfeed</a></h5>
 			<header class="page-header">
 				<h1 class="page-title">
 					<?php
@@ -23,7 +26,10 @@ get_header();
 					?>
 				</h1>
 			</header><!-- .page-header -->
-
+			<?php get_sidebar(); ?>
+		</div>
+	</div>
+	<div class="row flex-wrap newsfeed--posts">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -34,7 +40,7 @@ get_header();
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'search' );
+				get_template_part( 'template-parts/content-newsfeed', 'search' );
 
 			endwhile;
 
@@ -46,10 +52,14 @@ get_header();
 
 		endif;
 		?>
-
+	</div>
+	<nav class="pagination">
+	<?php pagination_bar(); ?>
+	</nav>
+			</div>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
 <?php
-get_sidebar();
+
 get_footer();
