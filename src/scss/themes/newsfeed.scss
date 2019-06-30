@@ -85,13 +85,17 @@
   }
   .thumbnail {
     width: 100%;
-    max-height: 200px;
+    max-height: 300px;
     overflow: hidden;
     margin-bottom: 20px;
     border-radius: 2px;
     img {
       width: 100%;
       height: auto;
+      @media all and (max-width: $screen-xs-max) {
+        max-width: 100%;
+        width: initial;
+      }
     }
   }
 }
@@ -115,5 +119,12 @@
   margin: 20px 0 40px 0;
   @media all and (max-width: $screen-sm-max) {
     flex-direction: column;
+  }
+}
+
+.post-thumbnail {
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }

@@ -50,11 +50,11 @@ $loggedin_button = get_field('loggedin_button');
         <div>
           <h2>Get yourself some Reading Rush merch!</h2>
           <p>Pick up a camper mug or some bookmarks (or both!) to support The Reading Rush and get ready for the readathon.</p>
-          <a href="https://thereadingrush.bigcartel.com/" class="btn btn-lg btn--green">Visit the shop</a>
+          <a href="https://thereadingrush.bigcartel.com/" target="_blank" class="btn btn-lg btn--green">Visit the shop</a>
         </div>
         <div class="merch-products">
-          <a href="https://thereadingrush.bigcartel.com/product/camper-mug" class="merch-products--img"><img src ="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/merch-mug.jpg" alt="Reading Rush camper mug"></a>
-          <a href="https://thereadingrush.bigcartel.com/product/set-of-three-bookmarks" class="merch-products--img"><img src ="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/merch-bookmarks.jpg" alt="Reading Rush bookmark set"></a>
+          <a href="https://thereadingrush.bigcartel.com/product/camper-mug" target="_blank" class="merch-products--img"><img src ="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/merch-mug.jpg" alt="Reading Rush camper mug"></a>
+          <a href="https://thereadingrush.bigcartel.com/product/set-of-three-bookmarks" target="_blank" class="merch-products--img"><img src ="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/merch-bookmarks.jpg" alt="Reading Rush bookmark set"></a>
         </div>
       </div>
     </div>
