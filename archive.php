@@ -19,11 +19,14 @@ get_header();
 						<h5 class="breadcrumb"><a href="<?php echo site_url();?>/newsfeed">< Back to the newsfeed</a></h5>
 						<header class="page-header">
 							<?php
-							the_archive_title( '<h1 class="page-title">', '</h1>' );
+							single_cat_title('<h1 class="page-title">', '</h1>');
 							the_archive_description( '<div class="archive-description">', '</div>' );
 							?>
 						</header><!-- .page-header -->
-
+						<?php get_sidebar(); ?>
+					</div>
+				</div>
+				<div class="row flex-wrap newsfeed--posts">
 						<?php
 						/* Start the Loop */
 						while ( have_posts() ) :
@@ -44,8 +47,10 @@ get_header();
 
 					endif;
 					?>
-				</div>
 			</div>
+			<nav class="pagination">
+			<?php pagination_bar(); ?>
+			</nav>
 		</div>
 	</div><!-- #primary -->
 

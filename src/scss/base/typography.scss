@@ -81,3 +81,7 @@ a:hover,
 a:focus {
   color: $color--purple-3;
 }
+
+.page-title {
+  word-break: break-word;
+}

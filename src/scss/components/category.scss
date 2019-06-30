@@ -24,7 +24,28 @@
   font-weight: 700;
   text-transform: uppercase;
   font-size: 14px;
+  ul {
+      margin-top: 0;
+      @media all and (max-width: $screen-sm-max) {
+        margin-top: 10px;
+      }
+      li {
+        @media all and (max-width: $screen-sm-max) {
+          margin-top: 10px;
+        }
+      }
+  }
+
   a {
     text-decoration: none;
+  }
+  .current-cat {
+    a {
+      background: $color--purple;
+      color: $color--white;
+      &:hover {
+        border-color: $color--purple;
+      }
+    }
   }
 }

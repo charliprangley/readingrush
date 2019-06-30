@@ -8,7 +8,7 @@
  */
 
 ?>
-<div class="col-md-4">
+<div class="col-md-4 col-sm-6 col-xs-12">
 	<div class="color-box color-box--white color-box__newsfeed">
 		<div>
 				<div class="entry-meta entry-meta--top">
