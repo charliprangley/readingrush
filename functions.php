@@ -555,3 +555,23 @@ function pagination_bar() {
         ));
     }
 }
+
+/**
+ * Show only updates on activity page
+ */
+
+ function bp_activity_do_not_save( $activity_object ) {
+
+ 	$exclude = array(
+ 	        'updated_profile',
+ 	        'new_member',
+ 	        'new_avatar',
+ 	        'friendship_created',
+ 	        'joined_group'
+ 	    );
+
+ 	if( in_array( $activity_object->type, $exclude ) ) {
+ 		$activity_object->type = false;
+ 	}
+ }
+ add_action('bp_activity_before_save', 'bp_activity_do_not_save', 10, 1 );
