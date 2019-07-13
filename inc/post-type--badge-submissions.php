@@ -14,7 +14,7 @@ function badge_submission_custom_post() {
     'not_found'          => __( 'No Badge submission found' ),
     'not_found_in_trash' => __( 'No Badge submission found in the Trash' ),
     'parent_item_colon'  => '',
-    'menu_name'          => 'Badge Submission'
+    'menu_name'          => 'Badge Submission',
   );
   $args = array(
     'labels'        => $labels,
@@ -24,7 +24,8 @@ function badge_submission_custom_post() {
     'supports'      => array( 'title', 'editor', 'author', 'revisions', 'custom-fields', 'comments', 'thumbnail' ),
     'has_archive'   => true,
     'menu_icon'     => 'dashicons-testimonial',
-    'exclude_from_search' => true
+    'exclude_from_search' => true,
+    'rewrite' => array('slug'=>'badges'),
   );
   register_post_type( 'badge-submission', $args );
   flush_rewrite_rules();
@@ -33,7 +34,7 @@ add_action( 'init', 'badge_submission_custom_post' );
 
 function badge_submission_post_updated_messages( $messages ) {
   global $post, $post_ID;
-  $messages['team_member'] = array(
+  $messages['badge-submission'] = array(
     0 => '',
     1 => sprintf( __('Badge submission updated. <a href="%s">View Reading challenge</a>'), esc_url( get_permalink($post_ID) ) ),
     2 => __('Custom field updated.'),
