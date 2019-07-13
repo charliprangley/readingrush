@@ -56,6 +56,13 @@
   h1 {
     margin: 0;
   }
+  @media all and (max-width: $screen-xs-max) {
+    flex-direction: column;
+    align-items: flex-start;
+    .thumbnail {
+      margin: 0 0 20px 0;
+    }
+  }
 }
 
 .badge-submissions {
@@ -77,6 +84,12 @@
       display: inline-block;
       padding-right: 30px;
       margin-bottom: 40px;
+      @media all and (max-width: $screen-xs-max) {
+        width: 50%;
+      }
+      @media all and (max-width: $screen-xs) {
+        width: 100%;
+      }
     }
     .comment-author {
       img {
@@ -111,5 +124,12 @@
         float: right;
       }
     }
+  }
+}
+
+.single-badge {
+  .gamipress-required-achievements {
+    list-style-type: none;
+    padding-left: 0;
   }
 }
