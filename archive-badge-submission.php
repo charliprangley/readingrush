@@ -19,7 +19,7 @@ $args = array(
 	<div id="primary" class="content-area">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-7">
+				<div class="col-sm-8 col-sm-offset-2 text-center">
 
 					<?php
 					$badges = new WP_Query( $args );

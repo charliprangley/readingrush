@@ -104,12 +104,16 @@
   border-top: none;
   .gamipress-achievement {
     display: flex;
+    justify-content: center;
+    text-align: center;
     &-image {
       width: initial;
       margin-bottom: 20px;
+      padding-right: 0;
     }
     &-title {
       font-size: 22px;
+      line-height: 30px;
       a {
         color: $color--black;
         &:hover {

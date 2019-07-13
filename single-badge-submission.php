@@ -13,35 +13,35 @@ get_header();
 	<div id="primary" class="content-area">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-					BADGE SUBMISSION
+				<div class="col-md-8">
 					<?php
 					while ( have_posts() ) :
 						the_post();
 
-						get_template_part( 'template-parts/content', get_post_type() );
+						get_template_part( 'template-parts/content-badges', get_post_type() );
 
 						?>
-						<div class="post-navigation">
-							<div class="post-navigation--previous">
-								<?php previous_post_link(); ?>
-							</div>
-							<div class="post-navigation--next">
-								<?php next_post_link();  ?>
-							</div>
-						</div>
-						<?php
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
-
-					endwhile; // End of the loop.
-					?>
+						<?php if ( comments_open() || get_comments_number() ) :
+							comments_template('/badge-comments-form.php');
+						endif; ?>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div><!-- #primary -->
+		</div><!-- #primary -->
+	<?php
+	// If comments are open or we have at least one comment, load up the comment template.
+	if ( comments_open() || get_comments_number() ) :
+		?>
+		<div class="section--blue">
+			<div class="container">
+				<div class="row">
+							<?php comments_template('/badge-comments.php'); ?>
+						</div>
+					</div>
+			 </div>
+		<?php endif;
 
+	endwhile; // End of the loop.
+	?>
 <?php
 get_footer();

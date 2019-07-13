@@ -11,28 +11,15 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h5 class="breadcrumb"><a href="<?php echo site_url();?>/newsfeed">< Back to the newsfeed</a></h5>
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+		<h5 class="breadcrumb"><a href="<?php echo site_url();?>/badges">< See all badges</a></h5>
+		<div class="badge-header">
+			<div class="thumbnail">
+				<?php echo get_the_post_thumbnail(); ?>
+			</div>
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</div>
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				readingrush_posted_on();
-				readingrush_posted_by();
-				the_category();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
 	</header><!-- .entry-header -->
-
-	<?php readingrush_post_thumbnail(); ?>
-
 	<div class="entry-content">
 		<?php
 		the_content( sprintf(
