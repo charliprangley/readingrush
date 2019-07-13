@@ -23,7 +23,7 @@ function badge_submission_custom_post() {
     'menu_position' => 5,
     'supports'      => array( 'title', 'editor', 'author', 'revisions', 'custom-fields', 'comments', 'thumbnail' ),
     'has_archive'   => true,
-    'menu_icon'     => 'dashicons-star-filled',
+    'menu_icon'     => 'dashicons-testimonial',
     'exclude_from_search' => true
   );
   register_post_type( 'badge-submission', $args );

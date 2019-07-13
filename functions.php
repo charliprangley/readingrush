@@ -251,14 +251,14 @@ if ( ! is_user_logged_in() ) {
 }
 
 
-/**
- * disabling the WP rich text editor from buddypress forms.
- */
-function bp_disable_richtext($enabled, $field_id) {
-	$enabled = false;
-	return $enabled;
-}
-add_filter('bp_xprofile_is_richtext_enabled_for_field', 'bp_disable_richtext', 10, 2);
+// /**
+//  * disabling the WP rich text editor from buddypress forms.
+//  */
+// function bp_disable_richtext($enabled, $field_id) {
+// 	$enabled = false;
+// 	return $enabled;
+// }
+// add_filter('bp_xprofile_is_richtext_enabled_for_field', 'bp_disable_richtext', 10, 2);
 
 /**
  * Adding stylesheet to login page
