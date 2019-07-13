@@ -251,14 +251,14 @@ if ( ! is_user_logged_in() ) {
 }
 
 
-/**
- * disabling the WP rich text editor from buddypress forms.
- */
-function bp_disable_richtext($enabled, $field_id) {
-	$enabled = false;
-	return $enabled;
-}
-add_filter('bp_xprofile_is_richtext_enabled_for_field', 'bp_disable_richtext', 10, 2);
+// /**
+//  * disabling the WP rich text editor from buddypress forms.
+//  */
+// function bp_disable_richtext($enabled, $field_id) {
+// 	$enabled = false;
+// 	return $enabled;
+// }
+// add_filter('bp_xprofile_is_richtext_enabled_for_field', 'bp_disable_richtext', 10, 2);
 
 /**
  * Adding stylesheet to login page
@@ -346,7 +346,7 @@ function my_prefix_content() {
     // Like GamiPress shortcodes thought the do_shortcode() function
 
     // Displayed user achievements of all types (hiding the search and filter inputs, and set filter to just completed achievements)
-    echo do_shortcode('[gamipress_achievements columns="4" search="no" filter="no" filter_value="completed" user_id="' . $user_id . '" orderby="date" order="DESC" limit="20" points_awarded="no" times_earned="no" toggle="no" steps="no"]');
+    echo do_shortcode('[gamipress_achievements columns="4" search="no" filter="no" filter_value="completed" user_id="' . $user_id . '" orderby="date" order="ASC" limit="20" points_awarded="no" times_earned="no" toggle="no" steps="no" excerpt="no"]');
 
 
 }

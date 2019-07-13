@@ -1,0 +1,135 @@
+.badges {
+  margin-top: 70px;
+  a {
+    text-decoration: none;
+    h4 {
+      transition: color 0.2s ease;
+    }
+    h5 {
+      color: $color--purple;
+      transition: color 0.2s ease;
+    }
+    &:hover {
+      h4 {
+        color: $color--purple;
+      }
+      img {
+        opacity: 0.8;
+      }
+      h5 {
+        color: $color--purple-3;
+      }
+    }
+  }
+  &-grid {
+    text-align: center;
+    margin-bottom: 70px;
+    .thumbnail {
+      img {
+        max-width: 90px;
+        height: auto;
+        transition: opacity 0.2s ease;
+      }
+    }
+    h4 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    h5 {
+      margin-top: 10px;
+    }
+  }
+}
+
+.badge-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 40px;
+  .thumbnail {
+    margin-right: 20px;
+    img {
+      max-width: 150px;
+      height: auto;
+    }
+  }
+  h1 {
+    margin: 0;
+  }
+  @media all and (max-width: $screen-xs-max) {
+    flex-direction: column;
+    align-items: flex-start;
+    .thumbnail {
+      margin: 0 0 20px 0;
+    }
+  }
+}
+
+.badge-submissions {
+  margin-top: 50px;
+  .reply {
+    display: none;
+  }
+  #comment {
+    width: 100%;
+    height: 100px;
+  }
+  .comment-list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      width: 33%;
+      display: inline-block;
+      padding-right: 30px;
+      margin-bottom: 40px;
+      @media all and (max-width: $screen-xs-max) {
+        width: 50%;
+      }
+      @media all and (max-width: $screen-xs) {
+        width: 100%;
+      }
+    }
+    .comment-author {
+      img {
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+    .comment-metadata {
+      font-family: $sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 14px;
+      a {
+        color: $color--grey-5;
+        text-decoration: none;
+      }
+    }
+  }
+  .comment-navigation {
+    .nav-links {
+      font-family: $sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 14px;
+      a {
+        text-decoration: none;
+      }
+      .nav-next {
+        float: left;
+      }
+      .nav-previous {
+        float: right;
+      }
+    }
+  }
+}
+
+.single-badge {
+  .gamipress-required-achievements {
+    list-style-type: none;
+    padding-left: 0;
+  }
+}

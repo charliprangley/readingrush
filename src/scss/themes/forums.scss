@@ -162,6 +162,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  a {
+    text-decoration: none;
+  }
   .gamipress-bbpress-achievement {
     margin: 3px;
     @media all and (max-width: $screen-xs-max) {

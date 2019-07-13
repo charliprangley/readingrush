@@ -28,10 +28,12 @@
 				<div class="row">
 					<div class="col-sm-7">
 						<h5>Bio</h5>
-						<?php bp_profile_field_data('field=bio');?>
+						<?php $bio=xprofile_get_field_data('bio');
+									echo wpautop($bio); ?>
 						<div class="mt50">
 							<h5>Reading Rush TBR</h5>
-							<em><?php echo bp_profile_field_data('field=Your Reading Rush To Be Read list'); ?></em>
+							<em><?php $tbr=xprofile_get_field_data('Your Reading Rush To Be Read list');
+							echo wpautop($tbr); ?></em>
 						</div>
 					</div>
 					<div class="col-sm-5 profile-socials">
