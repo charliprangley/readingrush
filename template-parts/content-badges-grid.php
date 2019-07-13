@@ -9,16 +9,15 @@
 
 ?>
 <div class="col-md-3 col-sm-4 col-xs-6">
+	<a href="<?php echo get_permalink(); ?>" rel="bookmark">
 	<div class="badges-grid">
 			<div class="thumbnail">
 				<?php echo get_the_post_thumbnail(); ?>
 			</div>
 				<?php
-					the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+					the_title( '<h4 class="entry-title">', '</h4>' );
 					?>
-					<?php if (get_the_post_thumbnail()) : ?>
-
-				<?php endif; ?>
-			<a href="<?php echo get_permalink(); ?>" class="btn btn-md btn--green">Get badge</a>
+					<h5>More info ></h5>
 		</div>
+	</a>
 </div>

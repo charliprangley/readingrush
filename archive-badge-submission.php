@@ -19,17 +19,18 @@ $args = array(
 	<div id="primary" class="content-area">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12">
+				<div class="col-sm-7">
 
 					<?php
 					$badges = new WP_Query( $args );
 					if ( $badges->have_posts() ) : ?>
 						<header class="page-header">
 							<h1>Reading Rush badges</h1>
+							<p>Complete challenges during the Reading Rush to earn these badges. They'll be displayed on your profile so everyone can see your achievements.</p>
 						</header><!-- .page-header -->
 					</div>
 				</div>
-				<div class="row flex-wrap newsfeed--posts">
+				<div class="row flex-wrap badges">
 						<?php
 						/* Start the Loop */
 						while ( $badges->have_posts() ) :

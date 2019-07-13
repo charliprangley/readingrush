@@ -1,0 +1,42 @@
+.badges {
+  margin-top: 50px;
+  a {
+    text-decoration: none;
+    h4 {
+      transition: color 0.2s ease;
+    }
+    h5 {
+      color: $color--purple;
+      transition: color 0.2s ease;
+    }
+    &:hover {
+      h4 {
+        color: $color--purple;
+      }
+      img {
+        opacity: 0.8;
+      }
+      h5 {
+        color: $color--purple-3;
+      }
+    }
+  }
+  &-grid {
+    text-align: center;
+    margin-bottom: 70px;
+    .thumbnail {
+      img {
+        max-width: 90px;
+        height: auto;
+        transition: opacity 0.2s ease;
+      }
+    }
+    h4 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    h5 {
+      margin-top: 10px;
+    }
+  }
+}
