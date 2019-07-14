@@ -184,34 +184,34 @@ require get_template_directory() . '/inc/post-type--badge-submissions.php';
 /**
  * Adding ACF form to profile page for users
  */
-function my_pre_save_post( $post_id ) {
-
-    // check if this is to be a new post
-    if( $post_id != 'new' )
-    {
-        return $post_id;
-    }
-
-    $current_user = wp_get_current_user();
-    $author = $current_user->user_login; // OR [user_firstname, user_lastname, display_name]
-    // Create a new post
-    $post = array(
-        'post_status'  => 'publish',
-        'post_title'  => $author,
-        'post_type'  => 'reading-challenge',
-    );
-
-    // insert the post
-    $post_id = wp_insert_post( $post );
-
-    // update $_POST['return']
-    $_POST['return'] = add_query_arg( array('post_id' => $post_id), $_POST['return'] );
-
-    // return the new ID
-    return $post_id;
-}
-
-add_filter('acf/pre_save_post' , 'my_pre_save_post' );
+// function my_pre_save_post( $post_id ) {
+//
+//     // check if this is to be a new post
+//     if( $post_id != 'new' )
+//     {
+//         return $post_id;
+//     }
+//
+//     $current_user = wp_get_current_user();
+//     $author = $current_user->user_login; // OR [user_firstname, user_lastname, display_name]
+//     // Create a new post
+//     $post = array(
+//         'post_status'  => 'publish',
+//         'post_title'  => $author,
+//         'post_type'  => 'reading-challenge',
+//     );
+//
+//     // insert the post
+//     $post_id = wp_insert_post( $post );
+//
+//     // update $_POST['return']
+//     $_POST['return'] = add_query_arg( array('post_id' => $post_id), $_POST['return'] );
+//
+//     // return the new ID
+//     return $post_id;
+// }
+//
+// add_filter('acf/pre_save_post' , 'my_pre_save_post' );
 
 /**
  * function for counting pages based on reading-challenge data entry
@@ -356,21 +356,21 @@ function my_prefix_content() {
  * Adding a custom pages tab in buddypress profile.
  */
 
-// function profile_tab_pages() {
-//       global $bp;
-//
-//       bp_core_new_nav_item( array(
-//             'name' => 'Update pages and books',
-//             'slug' => 'pages',
-//             'screen_function' => 'pages_screen',
-//             'position' => 70,
-//             'parent_url'      => bp_loggedin_user_domain() . '/pages/',
-//             'parent_slug'     => $bp->profile->slug,
-//             'default_subnav_slug' => 'pages',
-// 						'show_for_displayed_user' => FALSE
-//       ) );
-// }
-// add_action( 'bp_setup_nav', 'profile_tab_pages' );
+function profile_tab_pages() {
+      global $bp;
+
+      bp_core_new_nav_item( array(
+            'name' => 'Update pages and books',
+            'slug' => 'pages',
+            'screen_function' => 'pages_screen',
+            'position' => 70,
+            'parent_url'      => bp_loggedin_user_domain() . '/pages/',
+            'parent_slug'     => $bp->profile->slug,
+            'default_subnav_slug' => 'pages',
+						'show_for_displayed_user' => FALSE
+      ) );
+}
+add_action( 'bp_setup_nav', 'profile_tab_pages' );
 
 
 function pages_screen() {
@@ -385,8 +385,8 @@ function pages_title() {
 }
 
 function pages_content() {
-	include "template-parts/page-count-graph.php";
     include "template-parts/page-count-edit.php";
+
 }
 
 /**

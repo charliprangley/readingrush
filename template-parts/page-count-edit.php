@@ -20,7 +20,8 @@
 							),
 
 							'submit_value'		=> 'Save page counts'
-						)); ?>
+						));
+						?>
 
 				</div><!-- #content -->
 			</div><!-- #primary -->

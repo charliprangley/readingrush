@@ -37,6 +37,7 @@ $loggedin_button = get_field('loggedin_button');
         <a href="<?php echo $loggedin_link; ?>" class="btn btn--purple btn-xl"><?php echo $loggedin_button; ?></a>
         <?php endif; ?>
       <?php endif; ?>
+      <?php get_template_part('template-parts/page-count-graph'); ?>
     </div>
     <div class="col-sm-6">
       <div class="video-container">

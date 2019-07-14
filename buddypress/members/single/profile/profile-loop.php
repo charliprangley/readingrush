@@ -82,8 +82,8 @@
 				</div>
 				<div class="row mt50">
 					<div class="col-sm-12">
-						<h5>Stats</h5>
-						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/stats-placeholder.png" alt="stats coming soon" width="613" class="size-full">
+						<h5>Page count</h5>
+						<?php get_template_part('template-parts/page-count-graph-single'); ?>
 					</div>
 
 				</div>
