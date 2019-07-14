@@ -70,4 +70,3 @@ if ( ! function_exists( 'readingrush_header_style' ) ) :
 		<?php
 	}
 endif;
-acf_form_head();

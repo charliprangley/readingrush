@@ -184,34 +184,34 @@ require get_template_directory() . '/inc/post-type--badge-submissions.php';
 /**
  * Adding ACF form to profile page for users
  */
-// function my_pre_save_post( $post_id ) {
-//
-//     // check if this is to be a new post
-//     if( $post_id != 'new' )
-//     {
-//         return $post_id;
-//     }
-//
-//     $current_user = wp_get_current_user();
-//     $author = $current_user->user_login; // OR [user_firstname, user_lastname, display_name]
-//     // Create a new post
-//     $post = array(
-//         'post_status'  => 'publish',
-//         'post_title'  => $author,
-//         'post_type'  => 'reading-challenge',
-//     );
-//
-//     // insert the post
-//     $post_id = wp_insert_post( $post );
-//
-//     // update $_POST['return']
-//     $_POST['return'] = add_query_arg( array('post_id' => $post_id), $_POST['return'] );
-//
-//     // return the new ID
-//     return $post_id;
-// }
-//
-// add_filter('acf/pre_save_post' , 'my_pre_save_post' );
+function my_pre_save_post( $post_id ) {
+
+    // check if this is to be a new post
+    if( $post_id != 'new' )
+    {
+        return $post_id;
+    }
+
+    $current_user = wp_get_current_user();
+    $author = $current_user->user_login; // OR [user_firstname, user_lastname, display_name]
+    // Create a new post
+    $post = array(
+        'post_status'  => 'publish',
+        'post_title'  => $author,
+        'post_type'  => 'reading-challenge',
+    );
+
+    // insert the post
+    $post_id = wp_insert_post( $post );
+
+    // update $_POST['return']
+    $_POST['return'] = add_query_arg( array('post_id' => $post_id), $_POST['return'] );
+
+    // return the new ID
+    return $post_id;
+}
+
+add_filter('acf/pre_save_post' , 'my_pre_save_post' );
 
 /**
  * function for counting pages based on reading-challenge data entry
@@ -575,3 +575,12 @@ function pagination_bar() {
  	}
  }
  add_action('bp_activity_before_save', 'bp_activity_do_not_save', 10, 1 );
+
+
+ function form_head() {
+  if (!is_admin()) {
+    acf_form_head();
+  }
+}
+
+add_action('init', 'form_head');
