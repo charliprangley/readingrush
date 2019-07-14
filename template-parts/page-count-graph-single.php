@@ -43,11 +43,11 @@ $user_pages_7 = get_field('pages_7'); ?>
 new Chart(document.getElementById("bar-chart"), {
     type: 'bar',
     data: {
-      labels: ["Day one", "Day two", "Day three", "Day four", "Day five", "Day six", "Day seven"],
+      labels: ["DAY ONE", "DAY TWO", "DAY THREE", "DAY FOUR", "DAY FIVE", "DAY SIX", "DAY SEVEN"],
       datasets: [
         {
           label: "Pages read",
-          // backgroundColor: ["#3e95cd"],
+          backgroundColor: "#76E7CD",
           data: [<?php echo $user_pages_1; ?>,<?php echo $user_pages_2; ?>,<?php echo $user_pages_3; ?>,<?php echo $user_pages_4; ?>,<?php echo $user_pages_5; ?>,<?php echo $user_pages_6; ?>,<?php echo $user_pages_7; ?>]
         }
       ]
@@ -57,9 +57,23 @@ new Chart(document.getElementById("bar-chart"), {
       title: { display: false },
       scales: {
       yAxes: [{
+        gridLines: {
+          display: false
+        },
         ticks: {
           beginAtZero: true,
-          callback: function(value) {if (value % 1 === 0) {return value;}}
+          callback: function(value) {if (value % 1 === 0) {return value;}},
+          fontFamily: "brandon grotesque",
+          fontStyle: 700,
+        }
+      }],
+      xAxes: [{
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          fontFamily: "brandon grotesque",
+          fontStyle: 700,
         }
       }]
     }
