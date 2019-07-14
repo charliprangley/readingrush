@@ -179,6 +179,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 require get_template_directory() . '/inc/post-type--reading-challenge.php';
 require get_template_directory() . '/inc/post-type--badge-submissions.php';
+require get_template_directory() . '/inc/post-type--hall-of-fame.php';
 
 
 /**
