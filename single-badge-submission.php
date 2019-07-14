@@ -21,6 +21,7 @@ get_header();
 						get_template_part( 'template-parts/content-badges', get_post_type() );
 
 						?>
+						<h5>Badge submissions will open on July 22 when the Reading Rush starts</h5>
 						<?php if ( comments_open() || get_comments_number() ) :
 							comments_template('/badge-comments-form.php');
 						endif; ?>
