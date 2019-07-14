@@ -81,7 +81,7 @@
 					</div>
 				</div>
 				<div class="row mt50">
-					<div class="col-sm-12">
+					<div class="col-sm-6">
 						<h5>Page count</h5>
 						<?php get_template_part('template-parts/page-count-graph-single'); ?>
 					</div>
