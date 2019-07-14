@@ -194,3 +194,14 @@
     border-bottom: none !important;
   }
 }
+
+#bar-chart {
+  margin-top: 30px;
+}
+
+.stat-number {
+  font-family: $sans-serif;
+  font-weight: 700;
+  font-size: 45px;
+  color: $color--black;
+}

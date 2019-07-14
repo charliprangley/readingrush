@@ -1,8 +1,54 @@
 <?php
-$total_page_count_day1 = array_sum(get_total_page_count( 'pages_1', 'reading-challenge' ));
-echo '<p>Total page count for day 1: '.$total_page_count_day1.'</p>';
-$total_page_count_day2 = array_sum(get_total_page_count( 'pages_2', 'reading-challenge' ));
-echo '<p>Total page count for day 2: '.$total_page_count_day2.'</p>';
-$total_page_count_all = $total_page_count_day1+$total_page_count_day2;
-echo '<p>Total page count: '.$total_page_count_all.'</p>';
+$total_pages_day1 = array_sum(get_total_page_count( 'pages_1', 'reading-challenge' ));
+$total_pages_day2 = array_sum(get_total_page_count( 'pages_2', 'reading-challenge' ));
+$total_pages_day3 = array_sum(get_total_page_count( 'pages_3', 'reading-challenge' ));
+$total_pages_day4 = array_sum(get_total_page_count( 'pages_4', 'reading-challenge' ));
+$total_pages_day5 = array_sum(get_total_page_count( 'pages_5', 'reading-challenge' ));
+$total_pages_day6 = array_sum(get_total_page_count( 'pages_6', 'reading-challenge' ));
+$total_pages_day7 = array_sum(get_total_page_count( 'pages_7', 'reading-challenge' ));
+// $total_page_count_all = $total_pages_day1+$total_pages_day2;
+// echo '<p>Total page count: '.$total_page_count_all.'</p>';
 ?>
+<canvas id="bar-chart-all" width="800" height="450"></canvas>
+<script>
+new Chart(document.getElementById("bar-chart-all"), {
+    type: 'bar',
+    data: {
+      labels: ["DAY ONE", "DAY TWO", "DAY THREE", "DAY FOUR", "DAY FIVE", "DAY SIX", "DAY SEVEN"],
+      datasets: [
+        {
+          label: "Pages read",
+          backgroundColor: "#76E7CD",
+          data: [<?php echo $total_pages_day1; ?>,<?php echo $total_pages_day2; ?>,<?php echo $total_pages_day3; ?>,<?php echo $total_pages_day4; ?>,<?php echo $total_pages_day5; ?>,<?php echo $total_pages_day6; ?>,<?php echo $total_pages_day7; ?>]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: { display: false },
+      scales: {
+      yAxes: [{
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          beginAtZero: true,
+          callback: function(value) {if (value % 1 === 0) {return value;}},
+          fontFamily: "brandon grotesque",
+          fontStyle: 700,
+        }
+      }],
+      xAxes: [{
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          fontFamily: "brandon grotesque",
+          fontStyle: 700,
+        }
+      }]
+    }
+
+    }
+});
+</script>

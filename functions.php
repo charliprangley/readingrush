@@ -381,7 +381,7 @@ function pages_screen() {
     bp_core_load_template( 'buddypress/members/single/plugins' );
 }
 function pages_title() {
-    echo 'Update pages';
+    echo 'Update pages and books read';
 }
 
 function pages_content() {

@@ -143,3 +143,15 @@ input {
     }
   }
 }
+
+.acf-fields>.acf-field {
+  border-top: none !important;
+}
+
+.acf-field-group {
+  .acf-label {
+    font-family: $sans-serif;
+    font-weight: 700;
+    
+  }
+}

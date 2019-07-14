@@ -8,8 +8,10 @@
   $wp_posts = get_posts($args);
 
   if (!count($wp_posts)) { ?>
+    <?php if (!bp_is_my_profile()) : ?>
+    <p>No pages added yet</p>
+    <?php endif; ?>
 
-<p>No pages added yet</p>
 
 <?php } else {
 

@@ -80,10 +80,61 @@
 						<?php endif;?>
 					</div>
 				</div>
-				<div class="row mt50">
-					<div class="col-sm-6">
-						<h5>Page count</h5>
+				<div class="row">
+					<div class="col-md-7 mt50">
+						<h5>Pages read per day</h5>
+						<?php if (bp_is_my_profile()) : ?>
+						<a href="<?php echo bp_displayed_user_domain(); ?>pages" class="btn btn--purple__outline btn-sm">Add today's pages</a>
+						<?php endif; ?>
 						<?php get_template_part('template-parts/page-count-graph-single'); ?>
+					</div>
+					<div class="col-md-5 mt50">
+						<?php $user_ID = bp_displayed_user_id();
+
+						$args = array(
+						'post_type' => 'reading-challenge',
+						'posts_per_page' => -1,
+						'post_status' => 'any',
+						'author' => $user_ID
+						);
+
+						// The Query
+						$the_query = new WP_Query($args);
+
+						// The Loop
+						if ( $the_query->have_posts() ) {
+						$posts_by_user = array();
+						while ( $the_query->have_posts() ) {
+						$the_query->the_post();
+						$posts_by_user[] = get_the_ID();
+						$user_pages_1 = get_field('pages_1');
+						$user_pages_2 = get_field('pages_2');
+						$user_pages_3 = get_field('pages_3');
+						$user_pages_4 = get_field('pages_4');
+						$user_pages_5 = get_field('pages_5');
+						$user_pages_6 = get_field('pages_6');
+						$user_pages_7 = get_field('pages_7');
+						$books_finished = get_field('books_finished');
+						$book_list = get_field('book_names');
+						$user_pages_total = (int)$user_pages_1+(int)$user_pages_2+(int)$user_pages_3+(int)$user_pages_4+(int)$user_pages_5+(int)$user_pages_6+(int)$user_pages_7;
+						 ?>
+						<h5>Total pages read</h5>
+						<span class ="stat-number"><?php echo $user_pages_total; ?></span>
+						<?php if ($books_finished) : ?>
+							<h5 style="margin-top: 30px;">Total books finished</h5>
+							<span class ="stat-number"><?php echo $books_finished; ?></span>
+						<?php endif; ?>
+						<?php if ($book_list) : ?>
+							<h5 style="margin-top: 30px;">Books read</h5>
+							<?php echo $book_list; ?>
+						<?php endif; ?>
+						<?php if (bp_is_my_profile()) : ?>
+						<div class="mt30"><a href="<?php echo bp_displayed_user_domain(); ?>pages" class="btn btn--purple__outline btn-sm">Add books read</a></div>
+						<?php endif; ?>
+						<?php }
+						} else {
+						//echo 'no posts found';
+					} ?>
 					</div>
 
 				</div>
