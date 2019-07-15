@@ -575,3 +575,15 @@ function pagination_bar() {
  	}
  }
  add_action('bp_activity_before_save', 'bp_activity_do_not_save', 10, 1 );
+
+
+ /**
+  * Stop bbpress emails
+  */
+
+ function bbpress_unhook_email_notifications() {
+	remove_action( 'bbp_new_reply', 'bbp_notify_topic_subscribers', 11 );
+	remove_action( 'bbp_new_topic', 'bbp_notify_forum_subscribers', 11 );
+}
+
+add_action( 'init', 'bbpress_unhook_email_notifications', 100 );
