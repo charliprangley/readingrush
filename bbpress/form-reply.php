@@ -66,7 +66,7 @@
 						</p>
 
 					<?php endif; ?>
-					
+
 					<?php if ( bbp_allow_topic_tags() && current_user_can( 'assign_topic_tags' ) ) : ?>
 
 						<?php do_action( 'bbp_theme_before_reply_form_tags' ); ?>
@@ -77,30 +77,6 @@
 						</p>
 
 						<?php do_action( 'bbp_theme_after_reply_form_tags' ); ?>
-
-					<?php endif; ?>
-
-					<?php if ( bbp_is_subscriptions_active() && !bbp_is_anonymous() && ( !bbp_is_reply_edit() || ( bbp_is_reply_edit() && !bbp_is_reply_anonymous() ) ) ) : ?>
-
-						<?php do_action( 'bbp_theme_before_reply_form_subscription' ); ?>
-
-						<p>
-
-							<input name="bbp_topic_subscription" id="bbp_topic_subscription" type="checkbox" value="bbp_subscribe"<?php bbp_form_topic_subscribed(); ?> tabindex="<?php bbp_tab_index(); ?>" />
-
-							<?php if ( bbp_is_reply_edit() && ( bbp_get_reply_author_id() !== bbp_get_current_user_id() ) ) : ?>
-
-								<label for="bbp_topic_subscription"><?php _e( 'Notify the author of follow-up replies via email', 'bbpress' ); ?></label>
-
-							<?php else : ?>
-
-								<label for="bbp_topic_subscription"><?php _e( 'Notify me of follow-up replies via email', 'bbpress' ); ?></label>
-
-							<?php endif; ?>
-
-						</p>
-
-						<?php do_action( 'bbp_theme_after_reply_form_subscription' ); ?>
 
 					<?php endif; ?>
 
