@@ -33,16 +33,9 @@ get_header();
 	// If comments are open or we have at least one comment, load up the comment template.
 	if ( comments_open() || get_comments_number() ) :
 		?>
-		<div class="section--blue">
-			<div class="container">
-				<div class="row">
-							<?php comments_template('/badge-comments.php'); ?>
-						</div>
-					</div>
-			 </div>
-		<?php endif;
-
+	<?php comments_template('/badge-comments.php'); ?>
+<?php endif;
 	endwhile; // End of the loop.
-	?>
+?>
 <?php
 get_footer();
