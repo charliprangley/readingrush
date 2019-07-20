@@ -103,10 +103,6 @@
   padding: 60px 0;
   margin-bottom: -70px;
   margin-top: 80px;
-  .sponsor-logo {
-    width: 225px;
-    height: auto;
-  }
   .hof-item {
       height: 150px;
       background-size: cover;
@@ -127,6 +123,11 @@
       margin-top: 30px;
     }
   }
+}
+
+.sponsor-logo {
+  width: 225px;
+  height: auto;
 }
 
 .loggedout-newsfeed {

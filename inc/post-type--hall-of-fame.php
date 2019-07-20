@@ -24,7 +24,8 @@ function hall_of_fame_custom_post() {
     'supports'      => array( 'title', 'editor', 'author', 'revisions', 'custom-fields' ),
     'has_archive'   => true,
     'menu_icon'     => 'dashicons-star-filled',
-    'exclude_from_search' => true
+    'exclude_from_search' => true,
+    'rewrite' => array('slug'=>'hall-of-fame', 'pages' => true),
   );
   register_post_type( 'hall-of-fame', $args );
   register_taxonomy( 'categories', array('hall-of-fame'), array(

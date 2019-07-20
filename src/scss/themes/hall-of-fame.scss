@@ -1,0 +1,22 @@
+.sponsor-logo {
+  width: 225px;
+  height: auto;
+}
+
+.hof--posts {
+  .col-sm-6 {
+    margin: 15px 0;
+  }
+}
+
+.hof-thumbnail {
+  background-size: cover;
+  height: 200px;
+  margin: -30px -30px 20px;
+  background-position: center;
+  opacity: 1;
+  transition: opacity 0.3 ease;
+  &:hover {
+    opacity: 0.8;
+  }
+}
