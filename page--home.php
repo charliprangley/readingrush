@@ -252,26 +252,41 @@ $homepage_hof_button = get_field('homepage_hof_button');
       <div class="col-sm-12 text-center">
         <h2>The latest from the newsfeed</h2>
       </div>
+    </div>
+      <div class="row flex-wrap newsfeed--posts">
         <?php
          // the query
          $the_query = new WP_Query( array(
             'posts_per_page' => 3,
          ));
       ?>
+        <?php if ( $the_query->have_posts() ) : ?>
+          <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-      <?php if ( $the_query->have_posts() ) : ?>
-        <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+            	<div class="color-box color-box--white color-box__newsfeed">
+            		<div>
+            				<div class="entry-meta entry-meta--top">
+            					<div class="posted-on">
+            						<?php the_time('F jS, Y');?>
+            					</div>
+            					<?php the_category();?>
+            				</div>
+            				<?php
+            					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+            					?>
+            				</div>
+            			<a href="<?php echo get_permalink(); ?>" class="btn btn-md btn--green">Read post</a>
+            	</div>
+            </div>
 
-          <?php the_title(); ?>
-          <?php the_excerpt(); ?>
+          <?php endwhile; ?>
+          <?php wp_reset_postdata(); ?>
 
-        <?php endwhile; ?>
-        <?php wp_reset_postdata(); ?>
-
-      <?php else : ?>
-        <p><?php __('No news to report'); ?></p>
-      <?php endif; ?>
-    </div>
+        <?php else : ?>
+          <p><?php __('No news to report'); ?></p>
+        <?php endif; ?>
+      </div>
   <?php endif; ?>
 </div>
 <div class="section--light-green">
