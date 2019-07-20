@@ -19,7 +19,7 @@
     background-position: 50%;
   }
   span { display: none; }
-  @media all and (max-width: $screen-xs-max) {
+  @media all and (max-width: $screen-sm-max) {
     width: 150px;
     height: 60px;
     &:before {
@@ -67,6 +67,12 @@
     a {
       text-decoration: none;
       padding: 2px 15px;
+    }
+    @media all and (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
+      font-size: 13px;
+      a {
+        padding: 2px 12px;
+      }
     }
   }
 }
@@ -164,7 +170,7 @@ li.btn--purple {
   float: left;
   clear: both;
   margin-left: 5px;
-  @media all and (max-width: $screen-xs-max) {
+  @media all and (max-width: $screen-sm-max) {
     font-size: 10px;
   }
 }
