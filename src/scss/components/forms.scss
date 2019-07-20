@@ -144,14 +144,30 @@ input {
   }
 }
 
-.acf-fields>.acf-field {
-  border-top: none !important;
-}
+#acf-form {
+  width: 50%;
+  @media all and (max-width: $screen-sm-max) {
+    width: 100%;
+  }
+  .acf-fields>.acf-field {
+    border-top: none !important;
+  }
 
-.acf-field-group {
-  .acf-label {
-    font-family: $sans-serif;
-    font-weight: 700;
-    
+  .acf-field-group {
+    .acf-label {
+      font-family: $sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      color: $color--black;
+    }
+  }
+  .acf-field-number, .acf-field-textarea {
+    .acf-label {
+      font-family: $sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: $color--black;
+      text-transform: uppercase;
+    }
   }
 }

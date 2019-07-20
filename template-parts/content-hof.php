@@ -19,6 +19,6 @@ $hof_button_text = get_field('hof_button_text');
 				<?php endif; ?>
 				<p><?php echo the_content(); ?></p>
 				</div>
-			<a href="<?php echo $content_link; ?>" class="btn btn-md btn--purple"><?php echo $hof_button_text; ?></a>
+			<a href="<?php echo $content_link; ?>" class="btn btn-md btn--purple" target="_blank"><?php echo $hof_button_text; ?></a>
 	</div>
 </div>

@@ -239,7 +239,9 @@ $homepage_hof_button = get_field('homepage_hof_button');
           <p><?php echo $challenges_subheading; ?></p>
         </div>
       </div>
+
       <div class="row mt15 daily-challenges">
+        <?php if ($video_title) : ?>
         <div class="col-md-6">
           <div class="color-box color-box--blue color-box--flex">
             <div class="challenge-info">
@@ -254,6 +256,8 @@ $homepage_hof_button = get_field('homepage_hof_button');
             </div>
           </div>
         </div>
+      <?php endif; ?>
+      <?php if ($insta_title) : ?>
         <div class="col-md-6">
           <div class="color-box color-box--blue color-box--flex">
             <div class="challenge-info">
@@ -268,6 +272,7 @@ $homepage_hof_button = get_field('homepage_hof_button');
             </div>
           </div>
         </div>
+        <?php endif; ?>
       </div>
     <?php endwhile; endif; ?>
     <div class="row mt100 mt60-mobile">

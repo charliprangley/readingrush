@@ -19,7 +19,8 @@
 
 							),
 
-							'submit_value'		=> 'Save page counts'
+							'submit_value'		=> 'Save page counts',
+							'updated_message' => __("Pages & books updated", 'acf'),
 						));
 						?>
 
@@ -46,7 +47,9 @@
 		while ( $the_query->have_posts() ) {
 			$the_query->the_post();
 			$posts_by_user[] = get_the_ID();
-			acf_form();
+			acf_form(array (
+				'updated_message' => __("Pages & books updated", 'acf'),
+			));
 		}
 	} else {
 		//echo 'no posts found';
