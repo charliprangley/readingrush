@@ -90,6 +90,12 @@ a:focus {
   text-align: center;
 }
 
+.center-xs {
+  @media all and (max-width: $screen-xs-max) {
+    text-align: center;
+  }
+}
+
 .screen-reader-text {
   display: none;
 }

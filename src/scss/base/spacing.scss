@@ -2,6 +2,10 @@
   padding-top: 50px;
 }
 
+.mt15 {
+  margin-top: 15px;
+}
+
 .mt30 {
   margin-top: 30px;
 }
@@ -12,4 +16,10 @@
 
 .mt100 {
   margin-top: 100px;
+}
+
+.mt60-mobile {
+  @media all and (max-width: $screen-xs-max) {
+      margin-top: 60px;
+  }
 }
