@@ -13,7 +13,16 @@
   &--purple {
     background-color: $color--purple;
     p {
+      color: rgba($color--white, 0.8);
+    }
+    h3 {
       color: $color--white;
+    }
+  }
+  &--blue {
+    background-color: $color--blue;
+    p {
+      color: rgba($color--white, 0.8);
     }
     h3 {
       color: $color--white;
@@ -24,5 +33,11 @@
     @media all and (max-width: $screen-xs) {
       flex-direction: column;
     }
+  }
+}
+
+.col-sm-3 {
+  .color-box {
+    padding: 20px;
   }
 }

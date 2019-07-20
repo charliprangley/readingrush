@@ -56,7 +56,7 @@ $homepage_hof_button = get_field('homepage_hof_button');
     <?php endif; ?>
     </div>
   </div>
-  <div class="row mt100">
+  <div class="row mt100 shopping-cards">
     <div class="col-sm-6">
       <div class="color-box color-box--white color-box--flex">
         <?php if (have_rows('shop_block') ) : ?>
@@ -77,7 +77,7 @@ $homepage_hof_button = get_field('homepage_hof_button');
       </div>
     </div>
     <div class="col-sm-6">
-      <div class="color-box color-box--white">
+      <div class="color-box color-box--white color-box--flex">
         <?php if (have_rows('books_block') ) : ?>
           <?php while( have_rows('books_block') ): the_row();
           $books_heading = get_sub_field('books_heading');
@@ -86,10 +86,12 @@ $homepage_hof_button = get_field('homepage_hof_button');
           $books_button = get_sub_field('books_button_text');
           $books_image = get_sub_field('books_image');
           ?>
-          <img src="<?php echo $books_image; ?>">
-          <h4><?php echo $books_heading; ?></h4>
-          <p><?php echo $books_content; ?></p>
-          <a href="<?php echo $books_link; ?>" class="btn btn--green btn-lg"><?php echo $books_button; ?></a>
+          <div class="side-image" style="background-image: url('<?php echo $books_image; ?>')"></div>
+          <div>
+            <h4><?php echo $books_heading; ?></h4>
+            <p><?php echo $books_content; ?></p>
+            <a href="<?php echo $books_link; ?>" class="btn btn--green btn-lg"><?php echo $books_button; ?></a>
+          </div>
         <?php endwhile; endif; ?>
       </div>
     </div>
@@ -134,7 +136,7 @@ $homepage_hof_button = get_field('homepage_hof_button');
     <?php endif; // end benefit 4 ?>
     </div>
   <?php elseif (is_user_logged_in()) : ?>
-    <div class="row">
+    <div class="row mt100">
       <div class="col-sm-8 col-sm-offset-2 text-center">
           <h2><?php echo $todo_heading; ?></h2>
           <p><?php echo $todo_subheading; ?></p>
@@ -163,30 +165,38 @@ $homepage_hof_button = get_field('homepage_hof_button');
       $todo4_button_text = get_sub_field('to_do_4_button_text');
       $todo4_button_link = get_sub_field('to_do_4_button_link');
       ?>
-      <div class="row">
+      <div class="row to-dos mt30">
         <div class="col-sm-3">
-          <img src="<?php echo $todo1_icon; ?>">
-          <h3><?php echo $todo1_heading; ?></h3>
-          <p><?php echo $todo1_subheading; ?></p>
-          <a href="<?php echo $todo1_button_link; ?>" class="btn btn-lg"><?php echo $todo1_button_text; ?></a>
+          <div class="color-box color-box--purple">
+            <img src="<?php echo $todo1_icon; ?>">
+            <h3><?php echo $todo1_heading; ?></h3>
+            <p><?php echo $todo1_subheading; ?></p>
+            <a href="<?php echo $todo1_button_link; ?>" class="btn btn-md btn--white__outline"><?php echo $todo1_button_text; ?></a>
+          </div>
         </div>
         <div class="col-sm-3">
-          <img src="<?php echo $todo2_icon; ?>">
-          <h3><?php echo $todo2_heading; ?></h3>
-          <p><?php echo $todo2_subheading; ?></p>
-          <a href="<?php echo $todo2_button_link; ?>" class="btn btn-lg"><?php echo $todo2_button_text; ?></a>
+          <div class="color-box color-box--purple">
+            <img src="<?php echo $todo2_icon; ?>">
+            <h3><?php echo $todo2_heading; ?></h3>
+            <p><?php echo $todo2_subheading; ?></p>
+            <a href="<?php echo $todo2_button_link; ?>" class="btn btn-md btn--white__outline"><?php echo $todo2_button_text; ?></a>
+          </div>
         </div>
         <div class="col-sm-3">
-          <img src="<?php echo $todo3_icon; ?>">
-          <h3><?php echo $todo3_heading; ?></h3>
-          <p><?php echo $todo3_subheading; ?></p>
-          <a href="<?php echo $todo3_button_link; ?>" class="btn btn-lg"><?php echo $todo3_button_text; ?></a>
+          <div class="color-box color-box--purple">
+            <img src="<?php echo $todo3_icon; ?>">
+            <h3><?php echo $todo3_heading; ?></h3>
+            <p><?php echo $todo3_subheading; ?></p>
+            <a href="<?php echo $todo3_button_link; ?>" class="btn btn-md btn--white__outline"><?php echo $todo3_button_text; ?></a>
+          </div>
         </div>
         <div class="col-sm-3">
-          <img src="<?php echo $todo4_icon; ?>">
-          <h3><?php echo $todo4_heading; ?></h3>
-          <p><?php echo $todo4_subheading; ?></p>
-          <a href="<?php echo $todo4_button_link; ?>" class="btn btn-lg"><?php echo $todo4_button_text; ?></a>
+          <div class="color-box color-box--purple">
+            <img src="<?php echo $todo4_icon; ?>">
+            <h3><?php echo $todo4_heading; ?></h3>
+            <p><?php echo $todo4_subheading; ?></p>
+            <a href="<?php echo $todo4_button_link; ?>" class="btn btn-md btn--white__outline"><?php echo $todo4_button_text; ?></a>
+          </div>
         </div>
       </div>
     <?php endwhile; endif; ?>
@@ -201,35 +211,66 @@ $homepage_hof_button = get_field('homepage_hof_button');
       $insta_end = get_sub_field('insta_challenge_end');
       $insta_link = get_sub_field('insta_challenge_link');
       ?>
-      <div class="row">
+      <div class="row mt100">
         <div class="col-sm-8 col-sm-offset-2 text-center">
           <h2><?php echo $challenges_heading; ?></h2>
           <p><?php echo $challenges_subheading; ?></p>
         </div>
       </div>
-      <div class="row">
+      <div class="row mt30 daily-challenges">
         <div class="col-sm-6">
-          <span class="challenge-pre-heading"><svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M8.93986 11.2514V4.57242L14.8146 7.91205L8.93986 11.2514ZM22.0075 2.47097C21.7491 1.4983 20.9874 0.73237 20.0204 0.472423C18.2675 0 11.2386 0 11.2386 0C11.2386 0 4.20976 0 2.45692 0.472423C1.48989 0.73237 0.728213 1.4983 0.469724 2.47097C0 4.23381 0 7.912 0 7.912C0 7.912 0 11.5901 0.469724 13.353C0.728213 14.3257 1.48989 15.0916 2.45692 15.3517C4.20976 15.824 11.2386 15.824 11.2386 15.824C11.2386 15.824 18.2675 15.824 20.0204 15.3517C20.9874 15.0916 21.7491 14.3257 22.0075 13.353C22.4773 11.5901 22.4773 7.912 22.4773 7.912C22.4773 7.912 22.4773 4.23381 22.0075 2.47097Z" fill="#D7F9FF"/>
-          </svg> Video Challenge</span>
-          <h4><?php echo $video_title; ?></h4>
-          <span class="challenge-end-time"><?php echo $video_end; ?></span>
-          <a href="<?php echo $video_link; ?>" class="btn btn-lg">See challenge</a>
+          <div class="color-box color-box--blue color-box--flex">
+            <div>
+              <span class="challenge-pre-heading"><svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.93986 11.2514V4.57242L14.8146 7.91205L8.93986 11.2514ZM22.0075 2.47097C21.7491 1.4983 20.9874 0.73237 20.0204 0.472423C18.2675 0 11.2386 0 11.2386 0C11.2386 0 4.20976 0 2.45692 0.472423C1.48989 0.73237 0.728213 1.4983 0.469724 2.47097C0 4.23381 0 7.912 0 7.912C0 7.912 0 11.5901 0.469724 13.353C0.728213 14.3257 1.48989 15.0916 2.45692 15.3517C4.20976 15.824 11.2386 15.824 11.2386 15.824C11.2386 15.824 18.2675 15.824 20.0204 15.3517C20.9874 15.0916 21.7491 14.3257 22.0075 13.353C22.4773 11.5901 22.4773 7.912 22.4773 7.912C22.4773 7.912 22.4773 4.23381 22.0075 2.47097Z" fill="#D7F9FF"/>
+              </svg> Video Challenge</span>
+              <h4><?php echo $video_title; ?></h4>
+              <span class="challenge-end-time"><?php echo $video_end; ?></span>
+            </div>
+            <div>
+              <a href="<?php echo $video_link; ?>" class="btn btn-lg btn--white__outline">See challenge</a>
+            </div>
+          </div>
         </div>
         <div class="col-sm-6">
-          <span class="challenge-pre-heading"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M4.90932 0H13.5702C15.9012 0 17.999 2.2491 17.999 4.42885V13.0897C17.999 15.5354 16.0159 17.5186 13.5702 17.5186H4.90932C2.57827 17.5186 0.480469 15.2695 0.480469 13.0897V4.42885C0.480469 1.98313 2.46358 0 4.90932 0ZM4.909 1.3779C3.22424 1.3779 1.85802 2.74414 1.85802 4.42889V13.0897C1.85802 14.5291 3.3612 16.1407 4.909 16.1407H13.5699C15.2546 16.1407 16.6208 14.7745 16.6208 13.0897V4.42889C16.6208 2.9895 15.1177 1.3779 13.5699 1.3779H4.909ZM9.23956 13.1765C11.6791 13.1765 13.6568 11.1988 13.6568 8.75927C13.6568 6.31976 11.6791 4.34204 9.23956 4.34204C6.80005 4.34204 4.82233 6.31976 4.82233 8.75927C4.82233 11.1988 6.80005 13.1765 9.23956 13.1765ZM12.279 8.75931C12.279 7.08078 10.9181 5.71994 9.2396 5.71994C7.56107 5.71994 6.20023 7.08078 6.20023 8.75931C6.20023 10.4378 7.56107 11.7987 9.2396 11.7987C10.9182 11.7987 12.279 10.4379 12.279 8.75931ZM15.2254 4.25737C15.2254 2.70651 12.8987 2.70651 12.8987 4.25737C12.8987 5.80901 15.2254 5.80901 15.2254 4.25737Z" fill="#D7F9FF"/>
-          </svg> Instagram Challenge</span>
-          <h4><?php echo $insta_title; ?></h4>
-          <span class="challenge-end-time"><?php echo $insta_end; ?></span>
-          <a href="<?php echo $insta_link; ?>" class="btn btn-lg">See challenge</a>
+          <div class="color-box color-box--blue color-box--flex">
+            <div>
+              <span class="challenge-pre-heading"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M4.90932 0H13.5702C15.9012 0 17.999 2.2491 17.999 4.42885V13.0897C17.999 15.5354 16.0159 17.5186 13.5702 17.5186H4.90932C2.57827 17.5186 0.480469 15.2695 0.480469 13.0897V4.42885C0.480469 1.98313 2.46358 0 4.90932 0ZM4.909 1.3779C3.22424 1.3779 1.85802 2.74414 1.85802 4.42889V13.0897C1.85802 14.5291 3.3612 16.1407 4.909 16.1407H13.5699C15.2546 16.1407 16.6208 14.7745 16.6208 13.0897V4.42889C16.6208 2.9895 15.1177 1.3779 13.5699 1.3779H4.909ZM9.23956 13.1765C11.6791 13.1765 13.6568 11.1988 13.6568 8.75927C13.6568 6.31976 11.6791 4.34204 9.23956 4.34204C6.80005 4.34204 4.82233 6.31976 4.82233 8.75927C4.82233 11.1988 6.80005 13.1765 9.23956 13.1765ZM12.279 8.75931C12.279 7.08078 10.9181 5.71994 9.2396 5.71994C7.56107 5.71994 6.20023 7.08078 6.20023 8.75931C6.20023 10.4378 7.56107 11.7987 9.2396 11.7987C10.9182 11.7987 12.279 10.4379 12.279 8.75931ZM15.2254 4.25737C15.2254 2.70651 12.8987 2.70651 12.8987 4.25737C12.8987 5.80901 15.2254 5.80901 15.2254 4.25737Z" fill="#D7F9FF"/>
+              </svg> Instagram Challenge</span>
+              <h4><?php echo $insta_title; ?></h4>
+              <span class="challenge-end-time"><?php echo $insta_end; ?></span>
+            </div>
+            <div>
+              <a href="<?php echo $insta_link; ?>" class="btn btn-lg btn--white__outline">See challenge</a>
+            </div>
+          </div>
         </div>
       </div>
     <?php endwhile; endif; ?>
-    <div class="row">
+    <div class="row mt100">
       <div class="col-sm-12 text-center">
         <h2>The latest from the newsfeed</h2>
       </div>
+        <?php
+         // the query
+         $the_query = new WP_Query( array(
+            'posts_per_page' => 3,
+         ));
+      ?>
+
+      <?php if ( $the_query->have_posts() ) : ?>
+        <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+          <?php the_title(); ?>
+          <?php the_excerpt(); ?>
+
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
+
+      <?php else : ?>
+        <p><?php __('No news to report'); ?></p>
+      <?php endif; ?>
     </div>
   <?php endif; ?>
 </div>
@@ -237,10 +278,10 @@ $homepage_hof_button = get_field('homepage_hof_button');
   <div class="container">
     <div class="row">
       <div class="col-sm-5">
-        <img src="owlcrate">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/owlcrate-logo.png" class="sponsor-logo">
         <h2><?php echo $homepage_hof_title; ?> </h2>
         <p><?php echo $homepage_hof_subheading; ?></p>
-        <a href="/hall-of-fame"><?php echo $homepage_hof_button; ?></a>
+        <a href="<?php echo get_site_url();?>/hall-of-fame" class="btn btn-lg btn--purple"><?php echo $homepage_hof_button; ?></a>
       </div>
       <div class="col-sm-7">
       </div>

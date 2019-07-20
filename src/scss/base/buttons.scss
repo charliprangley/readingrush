@@ -59,6 +59,17 @@ button {
       }
     }
   }
+  &--white {
+    &__outline {
+      border: 1px solid $color--white;
+      color: $color--white;
+      transition: color border-color 0.3s ease;
+      &:hover {
+        color: rgba($color--white, 0.7);
+        border-color: rgba($color--white, 0.7);
+      }
+    }
+  }
   &-xl {
     padding: 20px 40px 17px 40px;
   }

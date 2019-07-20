@@ -21,23 +21,61 @@
   }
 }
 
-.merch-products {
-  display: flex;
-  @media all and (max-width: $screen-md) {
-    flex-direction: column;
+.shopping-cards {
+  .side-image {
+    width: 600px;
+    margin: -30px 20px -30px -30px;
+    background-size: cover;
+    background-position: center;
   }
-  @media all and (max-width: $screen-xs) {
-    margin-top: 20px;
+  h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
   }
-  &--img {
-    width: 50%;
-    padding: 10px;
-    @media all and (max-width: $screen-md) {
-      width: 100%;
+}
+
+.to-dos {
+  img {
+    width: 50px;
+    height: auto;
+  }
+}
+
+.daily-challenges {
+  .challenge-pre-heading {
+    display: flex;
+    color: rgba($color--white, 0.9);
+    text-transform: uppercase;
+    font-family: $sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    align-items: center;
+    svg {
+      margin-right: 10px;
     }
-    img {
-      width: 100%;
-      border-radius: 3px;
-    }
+  }
+  h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  .challenge-end-time {
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba($color--black, 0.8);
+  }
+  .color-box--flex {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.section--light-green {
+  background-color: $color--green-4;
+  padding: 60px 0;
+  margin-bottom: -70px;
+  margin-top: 80px;
+  .sponsor-logo {
+    width: 225px;
+    height: auto;
   }
 }
