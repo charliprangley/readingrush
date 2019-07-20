@@ -93,3 +93,11 @@ a:focus {
 .screen-reader-text {
   display: none;
 }
+
+.text-link {
+  font-family: $sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 16px;
+}

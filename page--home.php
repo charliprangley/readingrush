@@ -45,15 +45,9 @@ $homepage_hof_button = get_field('homepage_hof_button');
       <?php endif; ?>
     </div>
     <div class="col-sm-6">
-      <?php if (is_user_logged_in()) : ?>
         <div class="color-box color-box--white text-center">
           <?php get_template_part('template-parts/page-count-graph'); ?>
         </div>
-      <?php elseif (!is_user_logged_in()) : ?>
-        <div class="video-container">
-          <?php echo $intro_video; ?>
-        </div>
-    <?php endif; ?>
     </div>
   </div>
   <div class="row mt100 shopping-cards">
@@ -134,6 +128,33 @@ $homepage_hof_button = get_field('homepage_hof_button');
         <?php endwhile; ?>
     </div>
     <?php endif; // end benefit 4 ?>
+    </div>
+    <div class="row mt100">
+      <div class="col-sm-6">
+        <div class="video-container">
+          <?php echo $intro_video; ?>
+        </div>
+      </div>
+      <div class="col-sm-6 loggedout-newsfeed">
+        <h5>Newsfeed</h5>
+        <?php
+         // the query
+         $the_query = new WP_Query( array(
+            'posts_per_page' => 4,
+         ));
+      ?>
+        <?php if ( $the_query->have_posts() ) : ?>
+          <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                <div class="newsfeed-strip">
+                    <?php
+                      the_title( '<h4 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );
+                      ?>
+                  <a href="<?php echo get_permalink(); ?>" class="text-link">Read post ></a>
+                </div>
+          <?php endwhile; ?>
+          <?php wp_reset_postdata(); ?>
+        <?php endif; ?>
+      </div>
     </div>
   <?php elseif (is_user_logged_in()) : ?>
     <div class="row mt100">
@@ -282,10 +303,10 @@ $homepage_hof_button = get_field('homepage_hof_button');
 
           <?php endwhile; ?>
           <?php wp_reset_postdata(); ?>
-
-        <?php else : ?>
-          <p><?php __('No news to report'); ?></p>
         <?php endif; ?>
+      </div>
+      <div class="row text-center mt30">
+        <a href="/newsfeed" class="text-link">See all newsfeed posts ></a>
       </div>
   <?php endif; ?>
 </div>
@@ -299,6 +320,33 @@ $homepage_hof_button = get_field('homepage_hof_button');
         <a href="<?php echo get_site_url();?>/hall-of-fame" class="btn btn-lg btn--purple"><?php echo $homepage_hof_button; ?></a>
       </div>
       <div class="col-sm-7">
+        <?php
+          $args = array(
+            'post_type'   => 'hall-of-fame',
+            'post_status' => 'publish',
+            'posts_per_page' => 6,
+           );
+
+          $hof = new WP_Query( $args );
+          if( $hof->have_posts() ) :
+          ?>
+            <ul>
+              <?php
+                while( $hof->have_posts() ) :
+                  $hof->the_post();
+                  $hof_featured_image = get_field('hof_featured_image');
+                  ?>
+                  <div class="col-sm-4">
+                    <a href="<?php echo get_site_url();?>/hall-of-fame">
+                      <div class="hof-item" style="background-image: url('<?php echo $hof_featured_image; ?>')"></div>
+                    </a>
+                  </div>
+                  <?php
+                endwhile;
+                wp_reset_postdata();
+              ?>
+            </ul>
+          <?php endif; ?>
       </div>
     </div>
   </div>

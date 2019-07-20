@@ -78,4 +78,36 @@
     width: 225px;
     height: auto;
   }
+  .hof-item {
+      height: 150px;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 20px;
+  }
+}
+
+.loggedout-newsfeed {
+  h5 {
+    margin-top: 0;
+  }
+  .newsfeed-strip {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba($color--black, 0.2);
+    padding: 20px 0;
+    .entry-title {
+      margin: 0;
+      a {
+        text-decoration: none;
+        color: $color--black;
+        transition: color 0.3s ease;
+        &:hover {
+          color: $color--purple;
+        }
+      }
+    }
+    &:last-of-type {
+      border-bottom: 1px solid rgba($color--black, 0.2);
+    }
+  }
 }
