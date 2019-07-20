@@ -10,6 +10,15 @@
   &--white {
     background-color: $color--white;
   }
+  &--purple {
+    background-color: $color--purple;
+    p {
+      color: $color--white;
+    }
+    h3 {
+      color: $color--white;
+    }
+  }
   &--flex {
     display: flex;
     @media all and (max-width: $screen-xs) {

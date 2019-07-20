@@ -6,9 +6,9 @@ $total_pages_day4 = array_sum(get_total_page_count( 'pages_4', 'reading-challeng
 $total_pages_day5 = array_sum(get_total_page_count( 'pages_5', 'reading-challenge' ));
 $total_pages_day6 = array_sum(get_total_page_count( 'pages_6', 'reading-challenge' ));
 $total_pages_day7 = array_sum(get_total_page_count( 'pages_7', 'reading-challenge' ));
-// $total_page_count_all = $total_pages_day1+$total_pages_day2;
-// echo '<p>Total page count: '.$total_page_count_all.'</p>';
+$total_page_count_all = (int)$total_pages_day1+(int)$total_pages_day2+(int)$total_pages_day3+(int)$total_pages_day4+(int)$total_pages_day5+(int)$total_pages_day6+(int)$total_pages_day7;
 ?>
+<h5><?php echo $total_page_count_all; ?> pages read by Reading Rushers so far</h5>
 <canvas id="bar-chart-all" width="800" height="450"></canvas>
 <script>
 new Chart(document.getElementById("bar-chart-all"), {
