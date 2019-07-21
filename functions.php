@@ -252,15 +252,6 @@ if ( ! is_user_logged_in() ) {
 }
 
 
-// /**
-//  * disabling the WP rich text editor from buddypress forms.
-//  */
-// function bp_disable_richtext($enabled, $field_id) {
-// 	$enabled = false;
-// 	return $enabled;
-// }
-// add_filter('bp_xprofile_is_richtext_enabled_for_field', 'bp_disable_richtext', 10, 2);
-
 /**
  * Adding stylesheet to login page
  */
@@ -577,7 +568,9 @@ function pagination_bar() {
  }
  add_action('bp_activity_before_save', 'bp_activity_do_not_save', 10, 1 );
 
-
+/**
+* This code is needed to make the pages and books form only create one copy of data
+*/
  function form_head() {
   if (!is_admin()) {
     acf_form_head();
@@ -585,3 +578,13 @@ function pagination_bar() {
 }
 
 add_action('init', 'form_head');
+
+
+/**
+* Removing email notifications page from settings since we turned them all off in the back end
+*/
+
+function remove_email_notifications_page() {
+	bp_core_remove_subnav_item( 'settings', 'notifications' );
+}
+add_action( 'bp_setup_nav', 'remove_email_notifications_page', 15 );
