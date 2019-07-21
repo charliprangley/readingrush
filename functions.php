@@ -588,3 +588,16 @@ function remove_email_notifications_page() {
 	bp_core_remove_subnav_item( 'settings', 'notifications' );
 }
 add_action( 'bp_setup_nav', 'remove_email_notifications_page', 15 );
+
+
+ /**
+  * Stop bbpress emails
+  */
+
+ function bbpress_unhook_email_notifications() {
+	remove_action( 'bbp_new_reply', 'bbp_notify_topic_subscribers', 11 );
+	remove_action( 'bbp_new_topic', 'bbp_notify_forum_subscribers', 11 );
+}
+
+add_action( 'init', 'bbpress_unhook_email_notifications', 100 );
+
