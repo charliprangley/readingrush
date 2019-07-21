@@ -18,26 +18,145 @@
         margin-top: 50px;
       }
     }
+    .color-box {
+      margin-top: 40px;
+    }
   }
 }
 
-.merch-products {
-  display: flex;
-  @media all and (max-width: $screen-md) {
+.shopping-cards {
+  .side-image {
+    margin: -30px 20px -30px -30px;
+    background-size: cover;
+    background-position: center;
+    min-width: 200px;
+    @media all and (max-width: $screen-xs) {
+      height: 150px;
+      margin: -30px -30px 20px -30px;
+    }
+  }
+  h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  @media all and (max-width: $screen-sm-max) {
     flex-direction: column;
-  }
-  @media all and (max-width: $screen-xs) {
-    margin-top: 20px;
-  }
-  &--img {
-    width: 50%;
-    padding: 10px;
-    @media all and (max-width: $screen-md) {
-      width: 100%;
+    .color-box {
+      margin-bottom: 30px;
     }
-    img {
-      width: 100%;
-      border-radius: 3px;
+  }
+}
+
+.to-dos {
+  .col-sm-6 {
+    margin: 15px 0;
+  }
+  img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 5px;
+  }
+}
+
+.daily-challenges {
+  .challenge-pre-heading {
+    display: flex;
+    color: rgba($color--white, 0.9);
+    text-transform: uppercase;
+    font-family: $sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    align-items: center;
+    svg {
+      margin-right: 10px;
     }
+    @media all and (max-width: $screen-xs) {
+      justify-content: center;
+    }
+  }
+  h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  .challenge-end-time {
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba($color--black, 0.8);
+  }
+  .color-box--flex {
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+  }
+  .challenge-info {
+    width: 60%;
+    @media all and (max-width: $screen-xs) {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.section--light-green {
+  background-color: $color--green-4;
+  padding: 60px 0;
+  margin-bottom: -70px;
+  margin-top: 80px;
+  .hof-item {
+      height: 150px;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 20px;
+      @media all and (max-width: $screen-sm-max) {
+        height: 100px;
+      }
+      @media all and (max-width: $screen-xs-max) {
+        height: 200px;
+      }
+      @media all and (max-width: $screen-xs) {
+        height: 100px;
+      }
+  }
+  .hof-images {
+    @media all and (max-width: $screen-xs-max) {
+      margin-top: 30px;
+    }
+  }
+}
+
+.sponsor-logo {
+  width: 225px;
+  height: auto;
+}
+
+.loggedout-newsfeed {
+  h5 {
+    margin-top: 0;
+  }
+  .newsfeed-strip {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba($color--black, 0.2);
+    padding: 20px 0;
+    .entry-title {
+      margin: 0;
+      width: 70%;
+      a {
+        text-decoration: none;
+        color: $color--black;
+        transition: color 0.3s ease;
+        &:hover {
+          color: $color--purple;
+        }
+      }
+    }
+    &:last-of-type {
+      border-bottom: 1px solid rgba($color--black, 0.2);
+      margin-bottom: 20px;
+    }
+  }
+  @media all and (max-width: $screen-sm-max) {
+    margin-top: 30px;
   }
 }

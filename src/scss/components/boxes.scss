@@ -3,17 +3,46 @@
   box-shadow: -1px 1px 3px rgba($color--black, 0.1);
   padding: 30px;
   height: 100%;
+  overflow: hidden;
   h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  h3 {
     margin-top: 0;
     margin-bottom: 15px;
   }
   &--white {
     background-color: $color--white;
   }
+  &--purple {
+    background-color: $color--purple;
+    p {
+      color: rgba($color--white, 0.8);
+    }
+    h3 {
+      color: $color--white;
+    }
+  }
+  &--blue {
+    background-color: $color--blue;
+    p {
+      color: rgba($color--white, 0.8);
+    }
+    h3 {
+      color: $color--white;
+    }
+  }
   &--flex {
     display: flex;
     @media all and (max-width: $screen-xs) {
       flex-direction: column;
     }
+  }
+}
+
+.col-sm-3 {
+  .color-box {
+    padding: 20px;
   }
 }

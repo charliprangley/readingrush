@@ -179,6 +179,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 require get_template_directory() . '/inc/post-type--reading-challenge.php';
 require get_template_directory() . '/inc/post-type--badge-submissions.php';
+require get_template_directory() . '/inc/post-type--hall-of-fame.php';
 
 
 /**
@@ -250,15 +251,6 @@ if ( ! is_user_logged_in() ) {
     add_filter( 'show_admin_bar', '__return_false' );
 }
 
-
-// /**
-//  * disabling the WP rich text editor from buddypress forms.
-//  */
-// function bp_disable_richtext($enabled, $field_id) {
-// 	$enabled = false;
-// 	return $enabled;
-// }
-// add_filter('bp_xprofile_is_richtext_enabled_for_field', 'bp_disable_richtext', 10, 2);
 
 /**
  * Adding stylesheet to login page
@@ -356,21 +348,21 @@ function my_prefix_content() {
  * Adding a custom pages tab in buddypress profile.
  */
 
-// function profile_tab_pages() {
-//       global $bp;
-//
-//       bp_core_new_nav_item( array(
-//             'name' => 'Update pages and books',
-//             'slug' => 'pages',
-//             'screen_function' => 'pages_screen',
-//             'position' => 70,
-//             'parent_url'      => bp_loggedin_user_domain() . '/pages/',
-//             'parent_slug'     => $bp->profile->slug,
-//             'default_subnav_slug' => 'pages',
-// 						'show_for_displayed_user' => FALSE
-//       ) );
-// }
-// add_action( 'bp_setup_nav', 'profile_tab_pages' );
+function profile_tab_pages() {
+      global $bp;
+
+      bp_core_new_nav_item( array(
+            'name' => 'Update pages and books',
+            'slug' => 'pages',
+            'screen_function' => 'pages_screen',
+            'position' => 70,
+            'parent_url'      => bp_loggedin_user_domain() . '/pages/',
+            'parent_slug'     => $bp->profile->slug,
+            'default_subnav_slug' => 'pages',
+						'show_for_displayed_user' => FALSE
+      ) );
+}
+add_action( 'bp_setup_nav', 'profile_tab_pages' );
 
 
 function pages_screen() {
@@ -381,12 +373,12 @@ function pages_screen() {
     bp_core_load_template( 'buddypress/members/single/plugins' );
 }
 function pages_title() {
-    echo 'Update pages';
+    echo 'Update pages and books read';
 }
 
 function pages_content() {
-	include "template-parts/page-count-graph.php";
     include "template-parts/page-count-edit.php";
+
 }
 
 /**
@@ -549,7 +541,7 @@ function pagination_bar() {
 
         echo paginate_links(array(
             'base' => get_pagenum_link(1) . '%_%',
-            'format' => '/page/%#%',
+            'format' => 'page/%#%',
             'current' => $current_page,
             'total' => $total_pages,
         ));
@@ -576,6 +568,27 @@ function pagination_bar() {
  }
  add_action('bp_activity_before_save', 'bp_activity_do_not_save', 10, 1 );
 
+/**
+* This code is needed to make the pages and books form only create one copy of data
+*/
+ function form_head() {
+  if (!is_admin()) {
+    acf_form_head();
+  }
+}
+
+add_action('init', 'form_head');
+
+
+/**
+* Removing email notifications page from settings since we turned them all off in the back end
+*/
+
+function remove_email_notifications_page() {
+	bp_core_remove_subnav_item( 'settings', 'notifications' );
+}
+add_action( 'bp_setup_nav', 'remove_email_notifications_page', 15 );
+
 
  /**
   * Stop bbpress emails
@@ -587,3 +600,4 @@ function pagination_bar() {
 }
 
 add_action( 'init', 'bbpress_unhook_email_notifications', 100 );
+

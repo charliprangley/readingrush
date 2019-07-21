@@ -36,7 +36,7 @@ function badge_submission_post_updated_messages( $messages ) {
   global $post, $post_ID;
   $messages['badge-submission'] = array(
     0 => '',
-    1 => sprintf( __('Badge submission updated. <a href="%s">View Reading challenge</a>'), esc_url( get_permalink($post_ID) ) ),
+    1 => sprintf( __('Badge submission updated. <a href="%s">View Badge submission</a>'), esc_url( get_permalink($post_ID) ) ),
     2 => __('Custom field updated.'),
     3 => __('Custom field deleted.'),
     4 => __('Badge submission updated.'),

@@ -19,7 +19,7 @@
     background-position: 50%;
   }
   span { display: none; }
-  @media all and (max-width: $screen-xs-max) {
+  @media all and (max-width: $screen-sm-max) {
     width: 150px;
     height: 60px;
     &:before {
@@ -68,6 +68,12 @@
       text-decoration: none;
       padding: 2px 15px;
     }
+    @media all and (min-width: $screen-xs-max) and (max-width: $screen-sm-max) {
+      font-size: 13px;
+      a {
+        padding: 2px 12px;
+      }
+    }
   }
 }
 
@@ -79,7 +85,7 @@
   background-position: 12px;
   padding-left: 20px;
 }
-.btn--purple {
+li.btn--purple {
   @media all and (max-width: $screen-xs-max) {
     margin-left: 10px;
     margin-bottom: 10px;
@@ -164,7 +170,7 @@
   float: left;
   clear: both;
   margin-left: 5px;
-  @media all and (max-width: $screen-xs-max) {
+  @media all and (max-width: $screen-sm-max) {
     font-size: 10px;
   }
 }
