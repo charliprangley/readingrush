@@ -24,6 +24,9 @@
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
+  &:before, &:after {
+    width: 0;
+  }
   .list-wrap {
     min-height: initial !important;
     height: 100%;

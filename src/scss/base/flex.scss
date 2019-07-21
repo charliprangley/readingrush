@@ -44,7 +44,9 @@ footer {
 .flex-wrap {
   display: flex;
   flex-wrap: wrap;
-
+  &:before, &:after {
+    width: 0;
+  }
   &__col {
 
     &--3 {
