@@ -34,7 +34,7 @@ new Chart(document.getElementById("bar-chart-all"), {
         ticks: {
           beginAtZero: true,
           callback: function(value) {if (value % 1 === 0) {return value;}},
-          fontFamily: "brandon grotesque",
+          fontFamily: "brandon-grotesque",
           fontStyle: 700,
         }
       }],
@@ -43,7 +43,7 @@ new Chart(document.getElementById("bar-chart-all"), {
           display: false
         },
         ticks: {
-          fontFamily: "brandon grotesque",
+          fontFamily: "brandon-grotesque",
           fontStyle: 700,
         }
       }]
