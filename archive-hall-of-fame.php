@@ -27,7 +27,7 @@ $args = array(
 
 						<header class="page-header">
 							<a href="https://owlcrate.com" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/owlcrate-logo.png" class="sponsor-logo"></a>
-							<h1>Hall of Fame</h1>
+							<h1>Hall of Famers</h1>
 							<p>Welcome to the Reading Rush Hall of Fame, brought to you by <a href="https://owlcrate.com" target="_blank">OwlCrate</a>! Everyday we’re sharing some of our favourite content that you create during the event! Make sure to tag everything you make with <strong>#readingrush</strong> for a chance to be featured! And a big thanks to OwlCrate for supporting our event - they’re picking some favourite content to share every day too!</p>
 						</header><!-- .page-header -->
 					</div>

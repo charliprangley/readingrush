@@ -601,3 +601,5 @@ add_action( 'bp_setup_nav', 'remove_email_notifications_page', 15 );
 
 add_action( 'init', 'bbpress_unhook_email_notifications', 100 );
 
+
+add_filter('duplicate_comment_id', '__return_false');
