@@ -85,9 +85,10 @@
 
 				$args = array(
 				'post_type' => 'reading-challenge',
-				'posts_per_page' => -1,
+				'posts_per_page' => 1,
 				'post_status' => 'any',
-				'author' => $user_ID
+				'author' => $user_ID,
+				'order' => 'ASC'
 				);
 
 				// The Query
@@ -110,6 +111,7 @@
 				$book_list = get_field('book_names');
 				$challenges_completed = get_field('challenges_completed');
 				$user_pages_total = (int)$user_pages_1+(int)$user_pages_2+(int)$user_pages_3+(int)$user_pages_4+(int)$user_pages_5+(int)$user_pages_6+(int)$user_pages_7;
+
 				 ?>
 				<div class="row">
 					<div class="col-md-7 mt50">

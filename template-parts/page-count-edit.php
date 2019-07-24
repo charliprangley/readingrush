@@ -33,9 +33,10 @@
 
 	$args = array(
 		'post_type' => 'reading-challenge',
-		'posts_per_page' => -1,
+		'posts_per_page' => 1,
 		'post_status' => 'any',
-		'author' => $user_ID
+		'author' => $user_ID,
+		'order' => 'ASC'
 	);
 
 	// The Query
