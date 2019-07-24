@@ -12,7 +12,7 @@ get_header();
 $args = array(
 	'post_type' => 'hall-of-fame',
   'orderby' => 'date',
-	'order' => 'ASC',
+	'order' => 'DESC',
 );
 ?>
 
