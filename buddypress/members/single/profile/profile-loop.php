@@ -80,6 +80,7 @@
 						<?php endif;?>
 					</div>
 				</div>
+				<!-- Starting stats loop -->
 				<?php $user_ID = bp_displayed_user_id();
 
 				$args = array(
@@ -133,10 +134,6 @@
 						<?php if (bp_is_my_profile()) : ?>
 						<div class="mt30"><a href="<?php echo bp_displayed_user_domain(); ?>pages" class="btn btn--purple__outline btn-sm">Add books read</a></div>
 						<?php endif; ?>
-						<?php }
-						} else {
-						//echo 'no posts found';
-					} ?>
 					</div>
 				</div>
 				<div class="row mt50 flex-wrap">
@@ -172,6 +169,33 @@
 						<h4 class="badge-title">Completed all 2019 challenges</h4>
 					</div>
 					<?php endif; ?>
+					<?php
+						if( $user_ID == 963 ||
+								$user_ID == 420 ||
+								$user_ID == 972 ||
+								$user_ID == 201 ||
+								$user_ID == 184 ||
+								$user_ID == 88 ||
+								$user_ID == 265 ||
+								$user_ID == 819 ||
+								$user_ID == 3371 ||
+								$user_ID == 643 ||
+								$user_ID == 872 ||
+								$user_ID == 97 ||
+								$user_ID == 5583 ||
+								$user_ID == 721 ||
+								$user_ID == 1647 ||
+								$user_ID == 325 ||
+								$user_ID == 767 ||
+								$user_ID == 2853 ||
+								$user_ID == 5823 ||
+								$user_ID == 6252 ||
+								$user_ID == 11101 ): ?>
+					<div class="col-sm-2 col-xs-6 text-center">
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/magic-badge.png">
+						<h4 class="badge-title">Magic badge</h4>
+					</div>
+				<?php endif; ?>
 					<?php if( $challenges_completed && in_array('purple_cover', $challenges_completed) ): ?>
 					<div class="col-sm-2 col-xs-6 text-center">
 						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/purple-book.png">
@@ -258,13 +282,21 @@
 				<?php endif; ?>
 
 				</div>
+			<?php }
+		} else { ?>
+			<div class="mt50">
+				<?php if (bp_is_my_profile()) : ?>
+				<a href="<?php echo bp_displayed_user_domain(); ?>pages" class="btn btn--purple__outline btn-sm">Track your reading</a>
+				<?php endif; ?>
+			</div>
+
+		<?php }
+		endif; ?>
+
+		<?php endwhile; ?>
 			</div>
 
 			<?php bp_nouveau_xprofile_hook( 'after', 'field_content' ); ?>
-
-		<?php endif; ?>
-
-	<?php endwhile; ?>
 
 	<?php bp_nouveau_xprofile_hook( '', 'field_buttons' ); ?>
 

@@ -27,6 +27,7 @@ $args = array(
 						<header class="page-header">
 							<h1>Reading Rush badges</h1>
 							<p>Complete challenges during the Reading Rush to earn these badges. They'll be displayed on your profile so everyone can see your achievements.</p>
+							<p>When you've completed one of the challenges, head to the <strong>Update stats & badges</strong> tab on your profile and check the box to get the badge!</p>
 						</header><!-- .page-header -->
 					</div>
 				</div>
