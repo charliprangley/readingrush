@@ -152,18 +152,111 @@
 						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/2019-reader-badge.png">
 						<h4 class="badge-title">2019 Reader</h4>
 					</div>
+					<?php if( $challenges_completed
+										&& in_array('purple_cover', $challenges_completed)
+										&& in_array('same_spot', $challenges_completed)
+										&& in_array('five_words', $challenges_completed)
+										&& in_array('five_star', $challenges_completed)
+										&& in_array('last_year', $challenges_completed)
+										&& in_array('non_human', $challenges_completed)
+										&& in_array('seven_books', $challenges_completed)
+										&& in_array('first_book', $challenges_completed)
+										&& in_array('1000_pages', $challenges_completed)
+										&& in_array('book_movie', $challenges_completed)
+										&& in_array('booktube', $challenges_completed)
+										&& in_array('bookstagram', $challenges_completed)
+										&& in_array('twitter_sprint', $challenges_completed)
+										&& in_array('read_in', $challenges_completed) ): ?>
+					<div class="col-sm-2 col-xs-6 text-center">
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/2019-reader-badge-completed.png">
+						<h4 class="badge-title">Completed all 2019 challenges</h4>
+					</div>
+					<?php endif; ?>
 					<?php if( $challenges_completed && in_array('purple_cover', $challenges_completed) ): ?>
 					<div class="col-sm-2 col-xs-6 text-center">
-						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/2019-reader-badge.png">
-						<h4 class="badge-title">2019 Reader 2</h4>
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/purple-book.png">
+						<h4 class="badge-title">Read a book with purple on the cover</h4>
 					</div>
 				<?php endif; ?>
 				<?php if( $challenges_completed && in_array('same_spot', $challenges_completed) ): ?>
 				<div class="col-sm-2 col-xs-6 text-center">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/2019-reader-badge.png">
-					<h4 class="badge-title">2019 Reader same spot</h4>
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/same-spot.png">
+					<h4 class="badge-title">Read a book in the same spot the whole time</h4>
 				</div>
-			<?php endif; ?>
+				<?php endif; ?>
+				<?php if( $challenges_completed && in_array('five_words', $challenges_completed) ): ?>
+				<div class="col-sm-2 col-xs-6 text-center">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/five-words.png">
+					<h4 class="badge-title">Read a book with over five words in the title</h4>
+				</div>
+				<?php endif; ?>
+				<?php if( $challenges_completed && in_array('five_star', $challenges_completed) ): ?>
+				<div class="col-sm-2 col-xs-6 text-center">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/five-star.png">
+					<h4 class="badge-title">Read a 5 star book</h4>
+				</div>
+				<?php endif; ?>
+				<?php if( $challenges_completed && in_array('last_year', $challenges_completed) ): ?>
+				<div class="col-sm-2 col-xs-6 text-center">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/last-year.png">
+					<h4 class="badge-title">Read a book you meant to read last year</h4>
+				</div>
+				<?php endif; ?>
+				<?php if( $challenges_completed && in_array('non_human', $challenges_completed) ): ?>
+				<div class="col-sm-2 col-xs-6 text-center">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/non-human.png">
+					<h4 class="badge-title">Read a book with a non-human main character</h4>
+				</div>
+				<?php endif; ?>
+				<?php if( $challenges_completed && in_array('seven_books', $challenges_completed) ): ?>
+				<div class="col-sm-2 col-xs-6 text-center">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/7-books.png">
+					<h4 class="badge-title">Read seven books</h4>
+				</div>
+				<?php endif; ?>
+				<?php if( $challenges_completed && in_array('first_book', $challenges_completed) ): ?>
+				<div class="col-sm-2 col-xs-6 text-center">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/debut.png">
+					<h4 class="badge-title">Read an author’s first book</h4>
+				</div>
+				<?php endif; ?>
+				<?php if( $challenges_completed && in_array('1000_pages', $challenges_completed) ): ?>
+				<div class="col-sm-2 col-xs-6 text-center">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/1000-pages.png">
+					<h4 class="badge-title">Read over 1000 pages</h4>
+				</div>
+				<?php endif; ?>
+				<?php if( $challenges_completed && in_array('book_movie', $challenges_completed) ): ?>
+				<div class="col-sm-2 col-xs-6 text-center">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/movie.png">
+					<h4 class="badge-title">Read and watch a book to movie adaptation</h4>
+				</div>
+				<?php endif; ?>
+				<?php if( $challenges_completed && in_array('booktube', $challenges_completed) ): ?>
+				<div class="col-sm-2 col-xs-6 text-center">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/booktube.png">
+					<h4 class="badge-title">Made a Reading Rush booktube video</h4>
+				</div>
+				<?php endif; ?>
+				<?php if( $challenges_completed && in_array('bookstagram', $challenges_completed) ): ?>
+				<div class="col-sm-2 col-xs-6 text-center">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Instagram.png">
+					<h4 class="badge-title">Posted a Reading Rush bookstagram</h4>
+				</div>
+				<?php endif; ?>
+				<?php if( $challenges_completed && in_array('twitter_sprint', $challenges_completed) ): ?>
+				<div class="col-sm-2 col-xs-6 text-center">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/Twitter.png">
+					<h4 class="badge-title">Participated in a Twitter Sprint</h4>
+				</div>
+				<?php endif; ?>
+				<?php if( $challenges_completed && in_array('read_in', $challenges_completed) ): ?>
+				<div class="col-sm-2 col-xs-6 text-center">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/read-in.png">
+					<h4 class="badge-title">Go to a read-in</h4>
+				</div>
+				<?php endif; ?>
+
 				</div>
 			</div>
 
