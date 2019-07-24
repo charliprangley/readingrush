@@ -107,6 +107,7 @@
 				$user_pages_7 = get_field('pages_7');
 				$books_finished = get_field('books_finished');
 				$book_list = get_field('book_names');
+				$challenges_completed = get_field('challenges_completed');
 				$user_pages_total = (int)$user_pages_1+(int)$user_pages_2+(int)$user_pages_3+(int)$user_pages_4+(int)$user_pages_5+(int)$user_pages_6+(int)$user_pages_7;
 				 ?>
 				<div class="row">
@@ -151,10 +152,18 @@
 						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/2019-reader-badge.png">
 						<h4 class="badge-title">2019 Reader</h4>
 					</div>
+					<?php if( $challenges_completed && in_array('purple_cover', $challenges_completed) ): ?>
 					<div class="col-sm-2 col-xs-6 text-center">
 						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/2019-reader-badge.png">
-						<h4 class="badge-title">2019 Reader</h4>
+						<h4 class="badge-title">2019 Reader 2</h4>
 					</div>
+				<?php endif; ?>
+				<?php if( $challenges_completed && in_array('same_spot', $challenges_completed) ): ?>
+				<div class="col-sm-2 col-xs-6 text-center">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/2019-reader-badge.png">
+					<h4 class="badge-title">2019 Reader same spot</h4>
+				</div>
+			<?php endif; ?>
 				</div>
 			</div>
 

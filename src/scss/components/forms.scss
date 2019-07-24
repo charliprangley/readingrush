@@ -161,13 +161,22 @@ input {
       color: $color--black;
     }
   }
-  .acf-field-number, .acf-field-textarea {
+  .acf-field-number, .acf-field-textarea, .acf-field-checkbox {
     .acf-label {
       font-family: $sans-serif;
       font-weight: 700;
       font-size: 16px;
       color: $color--black;
       text-transform: uppercase;
+    }
+  }
+  .acf-field-checkbox {
+    li {
+      label {
+        font-weight: 400;
+      }
+      font-size: 18px;
+      padding: 10px 0;
     }
   }
 }
