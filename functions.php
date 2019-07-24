@@ -290,58 +290,58 @@ add_action( 'bp_init', 'rt_change_profile_tab_order', 999 );
 /**
  * Adding a custom badges tab in buddypress profile.
  */
-function my_prefix_bp_setup_nav() {
-
-    global $bp;
-
-    // Change the name and slug as you wish
-    $name = 'Badges earned';
-    $slug = 'badges';
-
-    bp_core_new_nav_item( array(
-        'name'                  => $name,
-        'slug'                  => $slug,
-        'screen_function'       => 'my_prefix_screen',
-        'position'              => 20,
-        'parent_url'            => bp_loggedin_user_domain() . '/' . $slug . '/',
-        'parent_slug'           => $bp->profile->slug,
-        'default_subnav_slug'   => $slug
-    ) );
-
-}
-add_action( 'bp_setup_nav', 'my_prefix_bp_setup_nav' );
-
-function my_prefix_screen() {
-
-    // Register title (optional) and content hooks
-    add_action( 'bp_template_title', 'my_prefix_title' );
-
-    add_action( 'bp_template_content', 'my_prefix_content' );
-
-    bp_core_load_template( 'buddypress/members/single/plugins' );
-
-}
-
-function my_prefix_title() {
-
-    echo 'Badges Earned';
-
-}
-
-function my_prefix_content() {
-
-    // User displayed ID, to pass to custom shortcodes
-    $user_id = bp_displayed_user_id();
-
-    // Here is where you can add anything you want
-
-    // Like GamiPress shortcodes thought the do_shortcode() function
-
-    // Displayed user achievements of all types (hiding the search and filter inputs, and set filter to just completed achievements)
-    echo do_shortcode('[gamipress_achievements columns="4" search="no" filter="no" filter_value="completed" user_id="' . $user_id . '" orderby="date" order="ASC" limit="20" points_awarded="no" times_earned="no" toggle="no" steps="no" excerpt="no"]');
-
-
-}
+// function my_prefix_bp_setup_nav() {
+//
+//     global $bp;
+//
+//     // Change the name and slug as you wish
+//     $name = 'Badges earned';
+//     $slug = 'badges';
+//
+//     bp_core_new_nav_item( array(
+//         'name'                  => $name,
+//         'slug'                  => $slug,
+//         'screen_function'       => 'my_prefix_screen',
+//         'position'              => 20,
+//         'parent_url'            => bp_loggedin_user_domain() . '/' . $slug . '/',
+//         'parent_slug'           => $bp->profile->slug,
+//         'default_subnav_slug'   => $slug
+//     ) );
+//
+// }
+// add_action( 'bp_setup_nav', 'my_prefix_bp_setup_nav' );
+//
+// function my_prefix_screen() {
+//
+//     // Register title (optional) and content hooks
+//     add_action( 'bp_template_title', 'my_prefix_title' );
+//
+//     add_action( 'bp_template_content', 'my_prefix_content' );
+//
+//     bp_core_load_template( 'buddypress/members/single/plugins' );
+//
+// }
+//
+// function my_prefix_title() {
+//
+//     echo 'Badges Earned';
+//
+// }
+//
+// function my_prefix_content() {
+//
+//     // User displayed ID, to pass to custom shortcodes
+//     $user_id = bp_displayed_user_id();
+//
+//     // Here is where you can add anything you want
+//
+//     // Like GamiPress shortcodes thought the do_shortcode() function
+//
+//     // Displayed user achievements of all types (hiding the search and filter inputs, and set filter to just completed achievements)
+//     echo do_shortcode('[gamipress_achievements columns="4" search="no" filter="no" filter_value="completed" user_id="' . $user_id . '" orderby="date" order="ASC" limit="20" points_awarded="no" times_earned="no" toggle="no" steps="no" excerpt="no"]');
+//
+//
+// }
 
 
 /**
@@ -602,4 +602,4 @@ add_action( 'bp_setup_nav', 'remove_email_notifications_page', 15 );
 add_action( 'init', 'bbpress_unhook_email_notifications', 100 );
 
 
-add_filter('duplicate_comment_id', '__return_false');
+// add_filter('duplicate_comment_id', '__return_false');
