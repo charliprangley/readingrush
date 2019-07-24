@@ -352,7 +352,7 @@ function profile_tab_pages() {
       global $bp;
 
       bp_core_new_nav_item( array(
-            'name' => 'Update stats and badges',
+            'name' => 'Update stats & badges',
             'slug' => 'pages',
             'screen_function' => 'pages_screen',
             'position' => 70,
@@ -373,7 +373,7 @@ function pages_screen() {
     bp_core_load_template( 'buddypress/members/single/plugins' );
 }
 function pages_title() {
-    echo 'Update stats and badges';
+    echo 'Update stats & badges';
 }
 
 function pages_content() {

@@ -20,7 +20,7 @@
 							),
 
 							'submit_value'		=> 'Save page counts',
-							'updated_message' => __("Pages & books updated", 'acf'),
+							'updated_message' => __("Your stats & badges have been updated!", 'acf'),
 						));
 						?>
 
@@ -48,7 +48,7 @@
 			$the_query->the_post();
 			$posts_by_user[] = get_the_ID();
 			acf_form(array (
-				'updated_message' => __("Pages & books updated", 'acf'),
+				'updated_message' => __("Your stats & badges have been updated!", 'acf'),
 			));
 		}
 	} else {
