@@ -158,14 +158,7 @@
 										&& in_array('five_star', $challenges_completed)
 										&& in_array('last_year', $challenges_completed)
 										&& in_array('non_human', $challenges_completed)
-										&& in_array('seven_books', $challenges_completed)
-										&& in_array('first_book', $challenges_completed)
-										&& in_array('1000_pages', $challenges_completed)
-										&& in_array('book_movie', $challenges_completed)
-										&& in_array('booktube', $challenges_completed)
-										&& in_array('bookstagram', $challenges_completed)
-										&& in_array('twitter_sprint', $challenges_completed)
-										&& in_array('read_in', $challenges_completed) ): ?>
+										&& in_array('first_book', $challenges_completed) ): ?>
 					<div class="col-sm-2 col-xs-6 text-center">
 						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/2019-reader-badge-completed.png">
 						<h4 class="badge-title">Completed all 2019 challenges</h4>
@@ -178,6 +171,7 @@
 								$user_ID == 201 ||
 								$user_ID == 184 ||
 								$user_ID == 88 ||
+								$user_ID == 139 ||
 								$user_ID == 265 ||
 								$user_ID == 819 ||
 								$user_ID == 3371 ||
@@ -192,7 +186,9 @@
 								$user_ID == 2853 ||
 								$user_ID == 5823 ||
 								$user_ID == 6252 ||
-								$user_ID == 11101 ): ?>
+								$user_ID == 11101 ||
+								$user_ID == 19156 ||
+								$user_ID == 3423 ): ?>
 					<div class="col-sm-2 col-xs-6 text-center">
 						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/magic-badge.png">
 						<h4 class="badge-title">Magic badge</h4>
