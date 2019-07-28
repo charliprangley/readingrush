@@ -155,13 +155,13 @@
 										&& in_array('purple_cover', $challenges_completed)
 										&& in_array('same_spot', $challenges_completed)
 										&& in_array('five_words', $challenges_completed)
-										&& in_array('five_star', $challenges_completed)
 										&& in_array('last_year', $challenges_completed)
 										&& in_array('non_human', $challenges_completed)
+										&& in_array('book_movie', $challenges_completed)
 										&& in_array('first_book', $challenges_completed) ): ?>
 					<div class="col-sm-2 col-xs-6 text-center">
 						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/2019-reader-badge-completed.png">
-						<h4 class="badge-title">Completed all 2019 challenges</h4>
+						<h4 class="badge-title">Completed 2019 reading challenges</h4>
 					</div>
 					<?php endif; ?>
 					<?php
