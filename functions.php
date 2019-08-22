@@ -348,38 +348,38 @@ add_action( 'bp_init', 'rt_change_profile_tab_order', 999 );
  * Adding a custom pages tab in buddypress profile.
  */
 
-function profile_tab_pages() {
-      global $bp;
-
-      bp_core_new_nav_item( array(
-            'name' => 'Update stats & badges',
-            'slug' => 'pages',
-            'screen_function' => 'pages_screen',
-            'position' => 70,
-            'parent_url'      => bp_loggedin_user_domain() . '/pages/',
-            'parent_slug'     => $bp->profile->slug,
-            'default_subnav_slug' => 'pages',
-						'show_for_displayed_user' => FALSE
-      ) );
-}
-add_action( 'bp_setup_nav', 'profile_tab_pages' );
-
-
-function pages_screen() {
-
-    // Add title and content here - last is to call the members plugin.php template.
-    add_action( 'bp_template_title', 'pages_title' );
-    add_action( 'bp_template_content', 'pages_content' );
-    bp_core_load_template( 'buddypress/members/single/plugins' );
-}
-function pages_title() {
-    echo 'Update stats & badges';
-}
-
-function pages_content() {
-    include "template-parts/page-count-edit.php";
-
-}
+// function profile_tab_pages() {
+//       global $bp;
+//
+//       bp_core_new_nav_item( array(
+//             'name' => 'Update stats & badges',
+//             'slug' => 'pages',
+//             'screen_function' => 'pages_screen',
+//             'position' => 70,
+//             'parent_url'      => bp_loggedin_user_domain() . '/pages/',
+//             'parent_slug'     => $bp->profile->slug,
+//             'default_subnav_slug' => 'pages',
+// 						'show_for_displayed_user' => FALSE
+//       ) );
+// }
+// add_action( 'bp_setup_nav', 'profile_tab_pages' );
+//
+//
+// function pages_screen() {
+//
+//     // Add title and content here - last is to call the members plugin.php template.
+//     add_action( 'bp_template_title', 'pages_title' );
+//     add_action( 'bp_template_content', 'pages_content' );
+//     bp_core_load_template( 'buddypress/members/single/plugins' );
+// }
+// function pages_title() {
+//     echo 'Update stats & badges';
+// }
+//
+// function pages_content() {
+//     include "template-parts/page-count-edit.php";
+//
+// }
 
 /**
  * Hiding the profile visibility settings tab.

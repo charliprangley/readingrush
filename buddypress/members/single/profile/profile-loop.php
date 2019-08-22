@@ -116,9 +116,9 @@
 				<div class="row">
 					<div class="col-md-7 mt50">
 						<h5>Pages read per day</h5>
-						<?php if (bp_is_my_profile()) : ?>
+						<!-- <?php if (bp_is_my_profile()) : ?>
 						<a href="<?php echo bp_displayed_user_domain(); ?>pages" class="btn btn--purple__outline btn-sm">Add today's pages</a>
-						<?php endif; ?>
+						<?php endif; ?> -->
 					<?php get_template_part('template-parts/page-count-graph-single'); ?>
 					</div>
 					<div class="col-md-5 mt50">
@@ -133,17 +133,17 @@
 							<h5 style="margin-top: 30px;">Books read</h5>
 							<?php echo $book_list; ?>
 						<?php endif; ?>
-						<?php if (bp_is_my_profile()) : ?>
+						<!-- <?php if (bp_is_my_profile()) : ?>
 						<div class="mt30"><a href="<?php echo bp_displayed_user_domain(); ?>pages" class="btn btn--purple__outline btn-sm">Add books read</a></div>
-						<?php endif; ?>
+						<?php endif; ?> -->
 					</div>
 				</div>
 				<div class="row mt50 flex-wrap">
 					<div class="col-sm-5">
 						<h5>Badges earned</h5>
-						<?php if (bp_is_my_profile()) : ?>
+						<!-- <?php if (bp_is_my_profile()) : ?>
 						<a href="<?php echo bp_displayed_user_domain(); ?>pages" class="btn btn--purple__outline btn-sm">Add badges earned</a>
-						<?php endif; ?>
+						<?php endif; ?> -->
 					</div>
 				</div>
 				<div class="row mt50 flex-wrap badges-earned">
@@ -283,9 +283,9 @@
 			<?php }
 		} else { ?>
 			<div class="mt50">
-				<?php if (bp_is_my_profile()) : ?>
+				<!-- <?php if (bp_is_my_profile()) : ?>
 				<a href="<?php echo bp_displayed_user_domain(); ?>pages" class="btn btn--purple__outline btn-sm">Track your reading</a>
-				<?php endif; ?>
+				<?php endif; ?> -->
 			</div>
 
 		<?php }

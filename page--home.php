@@ -233,13 +233,14 @@ $homepage_hof_button = get_field('homepage_hof_button');
       $insta_end = get_sub_field('insta_challenge_end');
       $insta_link = get_sub_field('insta_challenge_link');
       ?>
+      <?php if ($challenges_heading) : ?>
       <div class="row mt100 mt60-mobile">
         <div class="col-sm-8 col-sm-offset-2 text-center">
           <h2><?php echo $challenges_heading; ?></h2>
           <p><?php echo $challenges_subheading; ?></p>
         </div>
       </div>
-
+    <?php endif; ?>
       <div class="row mt15 daily-challenges">
         <?php if ($video_title) : ?>
         <div class="col-md-6">
